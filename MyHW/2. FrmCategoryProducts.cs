@@ -31,22 +31,29 @@ namespace MyHomeWork
         SqlConnection conn = null;  //宣告conn變數
         private void FrmCategoryProducts_Load(object sender, EventArgs e)
         {
-
-            conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
-            conn.Open();
-
-            //MessageBox.Show("Successfully");
-
-            string commandText = "select CategoryName from Categories";
-            SqlCommand command = new SqlCommand(commandText, conn);
-
-            SqlDataReader dataReader = command.ExecuteReader();
-
-            while (dataReader.Read())
+            try
             {
-                string s = $"{dataReader["CategoryName"]}";
-                comboBox1.Items.Add(s);
+                conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
+                conn.Open();
+
+                //MessageBox.Show("Successfully");
+
+                string commandText = "select CategoryName from Categories";
+                SqlCommand command = new SqlCommand(commandText, conn);
+
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    string s = $"{dataReader["CategoryName"]}";
+                    comboBox1.Items.Add(s);
+                }
             }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
