@@ -67,6 +67,8 @@ namespace MyHomeWork
                 string s = $"{dataReader["ProductName"]}";
                 this.listBox1.Items.Add(s);
             }
+
+            conn.Close();
         }
     }
 }
