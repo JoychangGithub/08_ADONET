@@ -64,6 +64,9 @@
     <Compile Include="3. FrmProducts.designer.cs">
       <DependentUpon>3. FrmProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="NWDataSet.cs">
+      <DependentUpon>NWDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
