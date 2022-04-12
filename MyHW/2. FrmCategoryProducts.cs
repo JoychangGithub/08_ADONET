@@ -35,7 +35,7 @@ namespace MyHomeWork
             conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
             conn.Open();
 
-            MessageBox.Show("Successfully");
+            //MessageBox.Show("Successfully");
 
             string commandText = "select CategoryName from Categories";
             SqlCommand command = new SqlCommand(commandText, conn);
