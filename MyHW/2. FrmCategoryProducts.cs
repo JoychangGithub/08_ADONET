@@ -16,6 +16,16 @@ namespace MyHomeWork
         public FrmCategoryProducts()
         {
             InitializeComponent();
+
+            this.comboBox1.Items.AddRange(new object[] {
+            "Beverages",
+            "Condiments",
+            "Confections",
+            "Dairy Products",
+            "Grains/Cereals",
+            "Meat/Poultry",
+            "Produce",
+            "Seafood"});
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

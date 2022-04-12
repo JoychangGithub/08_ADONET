@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
             {
                 Highest = c;
             }
-            lblResult.Text = a+","+b+ ","+ c+ "5中的最大值為: "+ Highest.ToString();
+            lblResult.Text = a+","+b+ ","+ c+ "中的最大值為: "+ Highest.ToString();
 
         }
 
