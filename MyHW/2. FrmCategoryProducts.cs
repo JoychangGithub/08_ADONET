@@ -87,8 +87,8 @@ namespace MyHomeWork
 
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
-        {    
-            //DisConnected
+        {
+            //DisConnected - SqlDataAdapter
 
             conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
             SqlDataAdapter adapter = new SqlDataAdapter("Select CategoryName from Categories", conn);
@@ -98,18 +98,21 @@ namespace MyHomeWork
 
             DataTable dt;
             dt = ds.Tables[0];
+            comboBox2.Items.Clear();  //避免每點tabPage一次就會重複增加CategoryName
+            comboBox3.Items.Clear();  //避免每點tabPage一次就會重複增加CategoryName
             for (int i = 0; i < dt.Rows.Count; i++)
             {
 
                 comboBox2.Items.Add(dt.Rows[i]["CategoryName"].ToString());
+                comboBox3.Items.Add(dt.Rows[i]["CategoryName"].ToString());
             }
         }
         private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //DisConnected
+            //DisConnected - SqlDataAdapter
             conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
             SqlDataAdapter adapter = new SqlDataAdapter($"select ProductName from Products as p join Categories as c on p.CategoryID = c.CategoryID where CategoryName = '{comboBox2.Text}'", conn);
-            
+
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             //this.dataGridView1.DataSource = ds.Tables[0]; //以dataGridView1顯示(視窗目前無dataGridView)
@@ -122,6 +125,23 @@ namespace MyHomeWork
 
                 listBox2.Items.Add(dt.Rows[i]["ProductName"].ToString());
             }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //DisConnected - TableAdapter
+            //Add to dataGridView1
+            this.productsTableAdapter1.FillByCategoryName(this.nwDataSet1.Products, comboBox3.Text);
+            this.dataGridView1.DataSource = this.nwDataSet1.Products;
+
+            this.listBox3.Items.Clear();
+            //Add to listBox3
+            for (int i = 0; i < this.nwDataSet1.Products.Rows.Count; i++) 
+            {
+                this.listBox3.Items.Add(this.nwDataSet1.Products[i]["ProductName"]);
+            }
+
+
         }
     }
 }
