@@ -42,5 +42,16 @@ namespace MyHW.Properties {
                 return ((string)(this["AdventureWorks2019ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyAlbumDataba" +
+            "se.mdf;Integrated Security=True")]
+        public string MyAlbumDatabaseConnectionString {
+            get {
+                return ((string)(this["MyAlbumDatabaseConnectionString"]));
+            }
+        }
     }
 }

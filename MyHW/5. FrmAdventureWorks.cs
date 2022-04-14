@@ -22,6 +22,8 @@ namespace MyHomeWork
             SqlDataAdapter adpter = new SqlDataAdapter("SELECT DATEPART(year, ModifiedDate) AS 'Year', COUNT(*) AS Expr1 FROM Production.ProductPhoto GROUP BY DATEPART(year, ModifiedDate)", conn);
             DataSet ds = new DataSet();
             adpter.Fill(ds);
+
+            //TODO
             //this.productPhotoTableAdapter1.FillByYear(this.awDataSet11.ProductPhoto);
             //this.dataGridView2.DataSource = this.awDataSet11.ProductPhoto;
 
