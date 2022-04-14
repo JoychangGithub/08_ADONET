@@ -44,11 +44,11 @@ namespace MyHW
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.nwDataSet1 = new MyHW.NWDataSet();
             this.categoriesTableAdapter1 = new MyHW.NWDataSetTableAdapters.CategoriesTableAdapter();
             this.customersTableAdapter1 = new MyHW.NWDataSetTableAdapters.CustomersTableAdapter();
             this.productsTableAdapter1 = new MyHW.NWDataSetTableAdapters.ProductsTableAdapter();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -79,18 +79,20 @@ namespace MyHW
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1096, 529);
+            this.tabControl1.Size = new System.Drawing.Size(806, 442);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1088, 497);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(798, 416);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "DataSet結構";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -98,7 +100,8 @@ namespace MyHW
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -112,15 +115,17 @@ namespace MyHW
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1082, 491);
-            this.splitContainer1.SplitterDistance = 169;
+            this.splitContainer1.Size = new System.Drawing.Size(794, 412);
+            this.splitContainer1.SplitterDistance = 124;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(17, 16);
+            this.button1.Location = new System.Drawing.Point(11, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 80);
+            this.button1.Size = new System.Drawing.Size(91, 53);
             this.button1.TabIndex = 0;
             this.button1.Text = "Load Data";
             this.button1.UseVisualStyleBackColor = true;
@@ -128,9 +133,10 @@ namespace MyHW
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(17, 360);
+            this.button5.Location = new System.Drawing.Point(11, 240);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(137, 80);
+            this.button5.Size = new System.Drawing.Size(91, 53);
             this.button5.TabIndex = 4;
             this.button5.Text = "摺疊容器";
             this.button5.UseVisualStyleBackColor = true;
@@ -138,9 +144,10 @@ namespace MyHW
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(17, 102);
+            this.button2.Location = new System.Drawing.Point(11, 68);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 80);
+            this.button2.Size = new System.Drawing.Size(91, 53);
             this.button2.TabIndex = 1;
             this.button2.Text = "[][]-抓資料";
             this.button2.UseVisualStyleBackColor = true;
@@ -148,9 +155,10 @@ namespace MyHW
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(17, 274);
+            this.button4.Location = new System.Drawing.Point(11, 183);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(137, 80);
+            this.button4.Size = new System.Drawing.Size(91, 53);
             this.button4.TabIndex = 3;
             this.button4.Text = "Read XML";
             this.button4.UseVisualStyleBackColor = true;
@@ -158,9 +166,10 @@ namespace MyHW
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(17, 188);
+            this.button3.Location = new System.Drawing.Point(11, 125);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 80);
+            this.button3.Size = new System.Drawing.Size(91, 53);
             this.button3.TabIndex = 2;
             this.button3.Text = "Write XML";
             this.button3.UseVisualStyleBackColor = true;
@@ -170,6 +179,7 @@ namespace MyHW
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -181,14 +191,16 @@ namespace MyHW
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.listBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(909, 491);
-            this.splitContainer2.SplitterDistance = 244;
+            this.splitContainer2.Size = new System.Drawing.Size(667, 412);
+            this.splitContainer2.SplitterDistance = 204;
+            this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 6;
             // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
@@ -198,8 +210,9 @@ namespace MyHW
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(909, 244);
-            this.splitContainer3.SplitterDistance = 304;
+            this.splitContainer3.Size = new System.Drawing.Size(667, 204);
+            this.splitContainer3.SplitterDistance = 223;
+            this.splitContainer3.SplitterWidth = 3;
             this.splitContainer3.TabIndex = 1;
             // 
             // dataGridView2
@@ -207,16 +220,18 @@ namespace MyHW
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 31;
-            this.dataGridView2.Size = new System.Drawing.Size(304, 244);
+            this.dataGridView2.Size = new System.Drawing.Size(223, 204);
             this.dataGridView2.TabIndex = 0;
             // 
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
@@ -226,8 +241,9 @@ namespace MyHW
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.dataGridView4);
-            this.splitContainer4.Size = new System.Drawing.Size(601, 244);
-            this.splitContainer4.SplitterDistance = 301;
+            this.splitContainer4.Size = new System.Drawing.Size(441, 204);
+            this.splitContainer4.SplitterDistance = 220;
+            this.splitContainer4.SplitterWidth = 3;
             this.splitContainer4.TabIndex = 0;
             // 
             // dataGridView3
@@ -235,10 +251,11 @@ namespace MyHW
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.RowTemplate.Height = 31;
-            this.dataGridView3.Size = new System.Drawing.Size(301, 244);
+            this.dataGridView3.Size = new System.Drawing.Size(220, 204);
             this.dataGridView3.TabIndex = 0;
             // 
             // dataGridView4
@@ -246,21 +263,35 @@ namespace MyHW
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 62;
             this.dataGridView4.RowTemplate.Height = 31;
-            this.dataGridView4.Size = new System.Drawing.Size(296, 244);
+            this.dataGridView4.Size = new System.Drawing.Size(218, 204);
             this.dataGridView4.TabIndex = 0;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(68, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(45, 37);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 31;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(160, 100);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.HorizontalScrollbar = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(667, 205);
+            this.listBox1.TabIndex = 0;
             // 
             // nwDataSet1
             // 
@@ -279,23 +310,13 @@ namespace MyHW
             // 
             this.productsTableAdapter1.ClearBeforeFill = true;
             // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(909, 243);
-            this.listBox1.TabIndex = 0;
-            // 
             // FrmOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 529);
+            this.ClientSize = new System.Drawing.Size(806, 442);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmOverview";
             this.Text = "FrmOverview";
             this.tabControl1.ResumeLayout(false);
