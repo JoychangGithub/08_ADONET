@@ -100,6 +100,18 @@
     <Compile Include="6. FrmMyAlbum_V1.Designer.cs">
       <DependentUpon>6. FrmMyAlbum_V1.cs</DependentUpon>
     </Compile>
+    <Compile Include="7. FrmCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7. FrmCustomers.designer.cs">
+      <DependentUpon>7. FrmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7. FrmLogon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7. FrmLogon.designer.cs">
+      <DependentUpon>7. FrmLogon.cs</DependentUpon>
+    </Compile>
     <Compile Include="AWDataSet1.cs">
       <DependentUpon>AWDataSet1.xsd</DependentUpon>
     </Compile>
@@ -108,10 +120,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AWDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmCategoryProduct.cs" />
+    <Compile Include="FrmImageFlags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImageFlags.designer.cs">
+      <DependentUpon>FrmImageFlags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Pic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Pic.Designer.cs">
+      <DependentUpon>Frm_Pic.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyAlbumDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyAlbumDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="NWDataSet.cs">
       <DependentUpon>NWDataSet.xsd</DependentUpon>
@@ -141,6 +173,21 @@
     <EmbeddedResource Include="6. FrmMyAlbum_V1.resx">
       <DependentUpon>6. FrmMyAlbum_V1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="7. FrmCustomers.resx">
+      <DependentUpon>7. FrmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7. FrmLogon.resx">
+      <DependentUpon>7. FrmLogon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImageFlags.resx">
+      <DependentUpon>FrmImageFlags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Pic.resx">
+      <DependentUpon>Frm_Pic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -149,6 +196,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="AWDataSet1.xsc">
       <DependentUpon>AWDataSet1.xsd</DependentUpon>
@@ -163,14 +211,17 @@
     </None>
     <None Include="MyAlbumDataSet.xsc">
       <DependentUpon>MyAlbumDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="MyAlbumDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MyAlbumDataSet.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="MyAlbumDataSet.xss">
       <DependentUpon>MyAlbumDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="NWDataSet.xsc">
       <DependentUpon>NWDataSet.xsd</DependentUpon>
@@ -198,12 +249,45 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyAlbumDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MyAlbumDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>MyAlbumDatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\background33.jpg" />
+    <None Include="Resources\background23.jpg" />
+    <None Include="Resources\background321.jpg" />
+    <None Include="Resources\background311.jpg" />
+    <None Include="Resources\background30.jpg" />
+    <None Include="Resources\background29.jpg" />
+    <None Include="Resources\background28.jpg" />
+    <None Include="Resources\background27.jpg" />
+    <None Include="Resources\background26.jpg" />
+    <None Include="Resources\background24.jpg" />
+    <None Include="Resources\background19.jpg" />
+    <None Include="Resources\background20.jpg" />
+    <None Include="Resources\background16.jpg" />
+    <None Include="Resources\background17.jpg" />
+    <None Include="Resources\background181.jpg" />
+    <None Include="Resources\background18.jpg" />
+    <None Include="Resources\background61.jpg" />
+    <None Include="Resources\background13.jpg" />
+    <None Include="Resources\background32.jpg" />
+    <None Include="Resources\background14.jpg" />
+    <None Include="Resources\001.png" />
+    <None Include="Resources\background8.jpg" />
+    <None Include="Resources\background12.jpg" />
+    <None Include="Resources\background41.jpg" />
+    <None Include="Resources\background31.jpg" />
+    <None Include="Resources\background7.jpg" />
+    <None Include="Resources\background9.jpg" />
+    <None Include="Resources\background.jpg" />
+    <None Include="Resources\background6.jpg" />
+    <None Include="Resources\background5.jpg" />
+    <None Include="Resources\background4.jpg" />
+    <None Include="Resources\background3.jpg" />
+    <None Include="Resources\background1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -94,7 +94,7 @@ SELECT ProductPhotoID, ThumbNailPhoto, ThumbnailPhotoFileName, LargePhoto, Large
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="AdventureWorks2019ConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByYear" GeneratorSourceName="FillByYear" Modifier="Public" Name="FillByYear" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByYear" UserSourceName="FillByYear">
+              <DbSource ConnectionRef="AdventureWorks2019ConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByYear" GeneratorSourceName="FillByYear" Modifier="Public" Name="FillByYear" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByYear">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT          DATEPART(year, ModifiedDate) AS 'Year', COUNT(*) AS Expr1
