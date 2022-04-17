@@ -39,7 +39,7 @@ namespace MyHW
             if (result == DialogResult.OK)
             {
                 MessageBox.Show("OK " + openFileDialog1.FileName);    //顯示圖片openFileDialog1.FileName路徑
-                this.picturePictureBox.Image = Image.FromFile(this.openFileDialog1.FileName);  //從openFileDialog1.FileName路徑建立image
+                this.picturePictureBox1.Image = Image.FromFile(this.openFileDialog1.FileName);  //從openFileDialog1.FileName路徑建立image
             }
             else
             {

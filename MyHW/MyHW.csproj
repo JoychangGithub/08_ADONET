@@ -120,7 +120,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AWDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmCategoryProduct.cs" />
     <Compile Include="FrmImageFlags.cs">
       <SubType>Form</SubType>
     </Compile>

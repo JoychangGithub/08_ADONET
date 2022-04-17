@@ -18,13 +18,21 @@ namespace MyHW
         {
             InitializeComponent();
 
-            this.label2.Text = "由此插入照片";
-            this.label2.Size = new System.Drawing.Size(20, 20);
-            this.label2.Font = new System.Drawing.Font("Chiller", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            //this.labUpdate.Text = "由此插入照片";
+            //this.labUpdate.Size = new System.Drawing.Size(20, 20);
+            //this.labUpdate.Font = new System.Drawing.Font("Chiller", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 
-            this.label3.Text = "相簿中的照片";
-            this.label3.Size = new System.Drawing.Size(20, 20);
-            this.label3.Font = new System.Drawing.Font("Chiller", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            //this.labShowpicture.Text = "相簿中的照片";
+            //this.labShowpicture.Size = new System.Drawing.Size(20, 20);
+            //this.labShowpicture.Font = new System.Drawing.Font("Chiller", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+
+            ShowCityLink();
+
+            //this.pictureBox1.DataBindings.Add("Image", this.bindingSource2, "Picture", true);
+            //this.textBox1.DataBindings.Add("Text", this.bindingSource2, "Description");
+
+            //this.pictureBox1.DataBindings.Add("Image", this.bindingSource2, "Picture");
+            //this.textBox1.DataBindings.Add("Text", this.bindingSource2, "Description");
 
             //用離線寫
 
@@ -83,7 +91,11 @@ namespace MyHW
             //{
             //    MessageBox.Show(ex.Message);
             //}
+        }
 
+        private void ShowCityLink()
+        {
+            //動態顯示城市Linklabel
             this.myCityTableAdapter1.Fill(this.myAlbumDataSet1.MyCity);
             this.bindingSource1.DataSource = this.myAlbumDataSet1.MyCity;
             //this.dataGridView1.DataSource = this.myAlbumDataSet1.MyCity; //test
@@ -95,47 +107,66 @@ namespace MyHW
                 LinkLabel x = new LinkLabel();
                 x.Text = city;
                 x.Size = new System.Drawing.Size(100, 50);
-                x.Font = new System.Drawing.Font("Chiller", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-                x.LinkColor = System.Drawing.Color.Salmon;
+                x.Font = new System.Drawing.Font("Chiller", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+                x.LinkColor = System.Drawing.Color.DarkSeaGreen;
                 x.VisitedLinkColor = System.Drawing.Color.Black;
                 x.LinkBehavior = LinkBehavior.AlwaysUnderline;
                 //x.LinkArea = new LinkArea(0, 50);
                 x.Left = 20;
-                x.Top = 50 * (i+1);
+                x.Top = 50 * (i + 1);
                 x.Tag = i;  //ID
 
                 x.Click += X_Click;//每個Click都指向同一方法X_Click
 
                 this.splitContainer1.Panel1.Controls.Add(x);
             }
-
-
         }
+
         private void X_Click(object sender, EventArgs e) 
         {
             //MessageBox.Show(((LinkLabel)sender).Text+"-"+((LinkLabel)sender).Tag);
 
             LinkLabel x = sender as LinkLabel;  //轉成原LinkLabel
-            if (x != null) 
-            {
-                MessageBox.Show(x.Text);
+            //if (x != null) 
+            //{
+            //    MessageBox.Show(x.Text);
+            //}
 
-                //DisConnected
-                this.myPictureTableAdapter1.Fill(this.myAlbumDataSet1.MyPicture);
-                this.bindingSource1.DataSource = this.myAlbumDataSet1.MyPicture;
-                this.dataGridView1.DataSource = this.bindingSource1.DataSource;
+            //DisConnected
+            int cityid = Convert.ToInt32(x.Tag) + 1;
 
-            }
+            this.myPictureTableAdapter1.FillByCityID(this.myAlbumDataSet1.MyPicture, cityid);
+            this.bindingSource2.DataSource = this.myAlbumDataSet1.MyPicture;
+            //this.dataGridView1.DataSource = this.bindingSource2;
+
+            //放到建構子方法出問題?System.ArgumentException: '無法繫結至 DataSource 上的屬性或欄位 Description
+            //this.pictureBox1.DataBindings.Add("Image", this.bindingSource2, "Picture", true);
+            //this.textBox1.DataBindings.Add("Text", this.bindingSource2, "Description");
+
+
+
+            //listBox1.Items.Clear();
+            //for (int i = 0; i < this.myAlbumDataSet1.MyPicture.Count; i++) 
+            //{
+            //    string picName = this.myAlbumDataSet1.MyPicture.Rows[i]["PictureName"].ToString();
+            //    listBox1.Items.Add(picName);
+            //}
+
 
         }
 
 
-
+        //更新照片資訊
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Frm_Pic fp = new Frm_Pic();
             fp.Show();
 
+        }
+
+        private void btnNextpage_Click(object sender, EventArgs e)
+        {
+            this.bindingSource2.Position += 1;
         }
     }
 }
