@@ -143,6 +143,16 @@ namespace MyHW.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap background171 {
+            get {
+                object obj = ResourceManager.GetObject("background171", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap background18 {
             get {
                 object obj = ResourceManager.GetObject("background18", resourceCulture);

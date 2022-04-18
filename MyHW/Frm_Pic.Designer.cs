@@ -30,12 +30,12 @@ namespace MyHW
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Pic));
             System.Windows.Forms.Label pictureIDLabel1;
             System.Windows.Forms.Label pictureLabel1;
             System.Windows.Forms.Label cityidLabel1;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label pictureNameLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Pic));
             this.myAlbumDataSet = new MyHW.MyAlbumDataSet();
             this.myPictureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.myPictureTableAdapter = new MyHW.MyAlbumDataSetTableAdapters.MyPictureTableAdapter();
@@ -78,6 +78,56 @@ namespace MyHW
             ((System.ComponentModel.ISupportInitialize)(this.picturePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myPictureDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureIDLabel1
+            // 
+            pictureIDLabel1.AutoSize = true;
+            pictureIDLabel1.Location = new System.Drawing.Point(498, 57);
+            pictureIDLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            pictureIDLabel1.Name = "pictureIDLabel1";
+            pictureIDLabel1.Size = new System.Drawing.Size(55, 12);
+            pictureIDLabel1.TabIndex = 9;
+            pictureIDLabel1.Text = "Picture ID:";
+            // 
+            // pictureLabel1
+            // 
+            pictureLabel1.AutoSize = true;
+            pictureLabel1.Location = new System.Drawing.Point(498, 74);
+            pictureLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            pictureLabel1.Name = "pictureLabel1";
+            pictureLabel1.Size = new System.Drawing.Size(40, 12);
+            pictureLabel1.TabIndex = 11;
+            pictureLabel1.Text = "Picture:";
+            // 
+            // cityidLabel1
+            // 
+            cityidLabel1.AutoSize = true;
+            cityidLabel1.Location = new System.Drawing.Point(493, 303);
+            cityidLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            cityidLabel1.Name = "cityidLabel1";
+            cityidLabel1.Size = new System.Drawing.Size(37, 12);
+            cityidLabel1.TabIndex = 13;
+            cityidLabel1.Text = "Cityid:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(493, 318);
+            descriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(61, 12);
+            descriptionLabel.TabIndex = 15;
+            descriptionLabel.Text = "Description:";
+            // 
+            // pictureNameLabel
+            // 
+            pictureNameLabel.AutoSize = true;
+            pictureNameLabel.Location = new System.Drawing.Point(493, 333);
+            pictureNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            pictureNameLabel.Name = "pictureNameLabel";
+            pictureNameLabel.Size = new System.Drawing.Size(70, 12);
+            pictureNameLabel.TabIndex = 17;
+            pictureNameLabel.Text = "Picture Name:";
             // 
             // myAlbumDataSet
             // 
@@ -126,9 +176,9 @@ namespace MyHW
             this.myPictureBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.myPictureBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.myPictureBindingNavigator.Name = "myPictureBindingNavigator";
-            this.myPictureBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.myPictureBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.myPictureBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.myPictureBindingNavigator.Size = new System.Drawing.Size(1208, 33);
+            this.myPictureBindingNavigator.Size = new System.Drawing.Size(805, 31);
             this.myPictureBindingNavigator.TabIndex = 0;
             this.myPictureBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -138,13 +188,13 @@ namespace MyHW
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "加入新的";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(40, 33);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(27, 28);
             this.bindingNavigatorCountItem.Text = "/{0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目總數";
             // 
@@ -154,7 +204,7 @@ namespace MyHW
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "刪除";
             // 
             // bindingNavigatorMoveFirstItem
@@ -163,7 +213,7 @@ namespace MyHW
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveFirstItem.Text = "移到最前面";
             // 
             // bindingNavigatorMovePreviousItem
@@ -172,28 +222,27 @@ namespace MyHW
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMovePreviousItem.Text = "移到上一個";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "位置";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 30);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "目前的位置";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -201,7 +250,7 @@ namespace MyHW
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "移到下一個";
             // 
             // bindingNavigatorMoveLastItem
@@ -210,29 +259,29 @@ namespace MyHW
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "移到最後面";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // myPictureBindingNavigatorSaveItem
             // 
             this.myPictureBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.myPictureBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("myPictureBindingNavigatorSaveItem.Image")));
             this.myPictureBindingNavigatorSaveItem.Name = "myPictureBindingNavigatorSaveItem";
-            this.myPictureBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 33);
+            this.myPictureBindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
             this.myPictureBindingNavigatorSaveItem.Text = "儲存資料";
             this.myPictureBindingNavigatorSaveItem.Click += new System.EventHandler(this.myPictureBindingNavigatorSaveItem_Click);
             // 
             // btnBrowser
             // 
-            this.btnBrowser.Location = new System.Drawing.Point(41, 517);
-            this.btnBrowser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBrowser.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowser.Location = new System.Drawing.Point(27, 345);
             this.btnBrowser.Name = "btnBrowser";
-            this.btnBrowser.Size = new System.Drawing.Size(94, 53);
+            this.btnBrowser.Size = new System.Drawing.Size(90, 35);
             this.btnBrowser.TabIndex = 8;
             this.btnBrowser.Text = "Browser...";
             this.btnBrowser.UseVisualStyleBackColor = true;
@@ -242,94 +291,54 @@ namespace MyHW
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pictureIDLabel1
-            // 
-            pictureIDLabel1.AutoSize = true;
-            pictureIDLabel1.Location = new System.Drawing.Point(747, 85);
-            pictureIDLabel1.Name = "pictureIDLabel1";
-            pictureIDLabel1.Size = new System.Drawing.Size(85, 18);
-            pictureIDLabel1.TabIndex = 9;
-            pictureIDLabel1.Text = "Picture ID:";
-            // 
             // pictureIDLabel2
             // 
             this.pictureIDLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.myPictureBindingSource, "PictureID", true));
-            this.pictureIDLabel2.Location = new System.Drawing.Point(861, 85);
+            this.pictureIDLabel2.Location = new System.Drawing.Point(574, 57);
+            this.pictureIDLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pictureIDLabel2.Name = "pictureIDLabel2";
-            this.pictureIDLabel2.Size = new System.Drawing.Size(100, 23);
+            this.pictureIDLabel2.Size = new System.Drawing.Size(67, 15);
             this.pictureIDLabel2.TabIndex = 10;
             this.pictureIDLabel2.Text = "label1";
-            // 
-            // pictureLabel1
-            // 
-            pictureLabel1.AutoSize = true;
-            pictureLabel1.Location = new System.Drawing.Point(747, 111);
-            pictureLabel1.Name = "pictureLabel1";
-            pictureLabel1.Size = new System.Drawing.Size(62, 18);
-            pictureLabel1.TabIndex = 11;
-            pictureLabel1.Text = "Picture:";
             // 
             // picturePictureBox1
             // 
             this.picturePictureBox1.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.myPictureBindingSource, "Picture", true));
-            this.picturePictureBox1.Location = new System.Drawing.Point(830, 111);
+            this.picturePictureBox1.Location = new System.Drawing.Point(553, 74);
+            this.picturePictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picturePictureBox1.Name = "picturePictureBox1";
-            this.picturePictureBox1.Size = new System.Drawing.Size(358, 315);
+            this.picturePictureBox1.Size = new System.Drawing.Size(239, 210);
             this.picturePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturePictureBox1.TabIndex = 12;
             this.picturePictureBox1.TabStop = false;
             // 
-            // cityidLabel1
-            // 
-            cityidLabel1.AutoSize = true;
-            cityidLabel1.Location = new System.Drawing.Point(739, 454);
-            cityidLabel1.Name = "cityidLabel1";
-            cityidLabel1.Size = new System.Drawing.Size(55, 18);
-            cityidLabel1.TabIndex = 13;
-            cityidLabel1.Text = "Cityid:";
-            // 
             // cityidLabel2
             // 
             this.cityidLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.myPictureBindingSource, "Cityid", true));
-            this.cityidLabel2.Location = new System.Drawing.Point(853, 454);
+            this.cityidLabel2.Location = new System.Drawing.Point(569, 303);
+            this.cityidLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.cityidLabel2.Name = "cityidLabel2";
-            this.cityidLabel2.Size = new System.Drawing.Size(100, 23);
+            this.cityidLabel2.Size = new System.Drawing.Size(67, 15);
             this.cityidLabel2.TabIndex = 14;
             this.cityidLabel2.Text = "label1";
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(739, 477);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(93, 18);
-            descriptionLabel.TabIndex = 15;
-            descriptionLabel.Text = "Description:";
             // 
             // descriptionLabel1
             // 
             this.descriptionLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.myPictureBindingSource, "Description", true));
-            this.descriptionLabel1.Location = new System.Drawing.Point(853, 477);
+            this.descriptionLabel1.Location = new System.Drawing.Point(569, 318);
+            this.descriptionLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.descriptionLabel1.Name = "descriptionLabel1";
-            this.descriptionLabel1.Size = new System.Drawing.Size(100, 23);
+            this.descriptionLabel1.Size = new System.Drawing.Size(67, 15);
             this.descriptionLabel1.TabIndex = 16;
             this.descriptionLabel1.Text = "label1";
-            // 
-            // pictureNameLabel
-            // 
-            pictureNameLabel.AutoSize = true;
-            pictureNameLabel.Location = new System.Drawing.Point(739, 500);
-            pictureNameLabel.Name = "pictureNameLabel";
-            pictureNameLabel.Size = new System.Drawing.Size(108, 18);
-            pictureNameLabel.TabIndex = 17;
-            pictureNameLabel.Text = "Picture Name:";
             // 
             // pictureNameLabel1
             // 
             this.pictureNameLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.myPictureBindingSource, "PictureName", true));
-            this.pictureNameLabel1.Location = new System.Drawing.Point(853, 500);
+            this.pictureNameLabel1.Location = new System.Drawing.Point(569, 333);
+            this.pictureNameLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pictureNameLabel1.Name = "pictureNameLabel1";
-            this.pictureNameLabel1.Size = new System.Drawing.Size(100, 23);
+            this.pictureNameLabel1.Size = new System.Drawing.Size(67, 15);
             this.pictureNameLabel1.TabIndex = 18;
             this.pictureNameLabel1.Text = "label1";
             // 
@@ -344,11 +353,12 @@ namespace MyHW
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.myPictureDataGridView.DataSource = this.myPictureBindingSource;
-            this.myPictureDataGridView.Location = new System.Drawing.Point(25, 64);
+            this.myPictureDataGridView.Location = new System.Drawing.Point(17, 43);
+            this.myPictureDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.myPictureDataGridView.Name = "myPictureDataGridView";
             this.myPictureDataGridView.RowHeadersWidth = 62;
             this.myPictureDataGridView.RowTemplate.Height = 31;
-            this.myPictureDataGridView.Size = new System.Drawing.Size(660, 436);
+            this.myPictureDataGridView.Size = new System.Drawing.Size(440, 291);
             this.myPictureDataGridView.TabIndex = 18;
             // 
             // dataGridViewTextBoxColumn1
@@ -394,9 +404,9 @@ namespace MyHW
             // 
             // Frm_Pic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1208, 675);
+            this.ClientSize = new System.Drawing.Size(805, 450);
             this.Controls.Add(this.myPictureDataGridView);
             this.Controls.Add(pictureIDLabel1);
             this.Controls.Add(this.pictureIDLabel2);
@@ -410,7 +420,6 @@ namespace MyHW
             this.Controls.Add(this.pictureNameLabel1);
             this.Controls.Add(this.btnBrowser);
             this.Controls.Add(this.myPictureBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_Pic";
             this.Text = "Frm_Pic";
             this.Load += new System.EventHandler(this.Frm_Pic_Load);

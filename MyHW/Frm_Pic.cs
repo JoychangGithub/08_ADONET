@@ -27,6 +27,8 @@ namespace MyHW
 
         private void Frm_Pic_Load(object sender, EventArgs e)
         {
+            MessageBox.Show(this.myPictureTableAdapter.Connection.ConnectionString);
+
             // TODO: 這行程式碼會將資料載入 'myAlbumDataSet.MyPicture' 資料表。您可以視需要進行移動或移除。
             this.myPictureTableAdapter.Fill(this.myAlbumDataSet.MyPicture);
 
@@ -34,6 +36,15 @@ namespace MyHW
 
         private void btnBrowser_Click(object sender, EventArgs e)
         {
+            ////存入圖片(使用2進位)
+            //openFileDialog1.Filter = "(*.jpg)|*.jpg|(*.bmp)|*.bmp"; //過濾檔案
+
+            //if (this.openFileDialog1.ShowDialog() == DialogResult.OK) 
+            //{
+            //    this.pi
+            //}
+
+            //存入圖片
             DialogResult result = this.openFileDialog1.ShowDialog();
 
             if (result == DialogResult.OK)
