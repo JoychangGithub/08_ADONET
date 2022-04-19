@@ -61,27 +61,9 @@ namespace MyHW
             //    MessageBox.Show(x.Text);
             //}
 
-            //DisConnected
             int cityid = Convert.ToInt32(x.Tag) + 1;
 
-            this.myPictureTableAdapter1.FillByCityID(this.myAlbumDataSet.MyPicture, cityid);
-            this.bindingSource1.DataSource = this.myAlbumDataSet.MyPicture;
-            this.dataGridView1.DataSource = this.bindingSource1;
-            this.pictureBox1.DataBindings.Add("Image", this.bindingSource1, "Picture", true);
-
-            //string[] files = (string[]) e.Data.GetData(DataFormats.FileDrop);
-
-
-            //放到建構子方法出問題?System.ArgumentException: '無法繫結至 DataSource 上的屬性或欄位 Description
-            //this.pictureBox1.DataBindings.Add("Image", this.bindingSource2, "Picture", true);
-            //this.textBox1.DataBindings.Add("Text", this.bindingSource2, "Description");
-
-            //listBox1.Items.Clear();
-            //for (int i = 0; i < this.myAlbumDataSet1.MyPicture.Count; i++)
-            //{
-            //    string picName = this.myAlbumDataSet1.MyPicture.Rows[i]["PictureName"].ToString();
-            //    listBox1.Items.Add(picName);
-            //}
+            ShowImage(cityid);
         }
 
         private void myCityBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -106,7 +88,7 @@ namespace MyHW
             if (result == DialogResult.OK)
             {
                 MessageBox.Show("OK " + openFileDialog1.FileName);    //顯示圖片openFileDialog1.FileName路徑
-                this.pictureBox1.Image = Image.FromFile(this.openFileDialog1.FileName);  //從openFileDialog1.FileName路徑建立image
+                
             }
             else
             {
@@ -114,7 +96,7 @@ namespace MyHW
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ShowImage(int cityid) 
         {
             //用離線寫
 
@@ -130,75 +112,53 @@ namespace MyHW
             {
                 SqlConnection conn = null;
                 //語法糖(syntax sugar):using
-                using (conn = new SqlConnection(builder.ConnectionString))//連線與自動關閉連線 //需using System.Data.SqlClient
+                using (conn = new SqlConnection(builder.ConnectionString))
                 {
                     //MessageBox.Show(conn.State.ToString()); //確認連接狀態
 
                     SqlCommand command = new SqlCommand();
-                    command.CommandText = $"Insert into MyPicture (PictureName, Image) values (@PictureName, @Image)";
+                    command.CommandText = $"Select Picture from MyPicture where Cityid='{cityid}'";
                     command.Connection = conn;
+                    conn.Open();
 
-                    byte[] bytes;  //宣告變數bytes
+                    SqlDataReader dataReader = command.ExecuteReader();
 
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream(); //建立MemoryStream ms
-                    this.pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    bytes = ms.GetBuffer();   //回傳bytes陣列
+                    if (dataReader.HasRows)
+                    {
+                        this.flowLayoutPanel1.Controls.Clear();
+                        while (dataReader.Read()) 
+                        {
 
-                    command.Parameters.Add("@Description", SqlDbType.Text).Value = this.textBox1.Text;
-                    command.Parameters.Add("@Image", SqlDbType.Image).Value = bytes;
+                            byte[] bytes = (byte[])dataReader["Picture"];  //讀取Picture的二進位資料
+                            System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes); //建立MemoryStream ms
 
-                    conn.Open();  //執行command前在open即可
-
-                    command.ExecuteNonQuery();  //執行command
-                    MessageBox.Show("Insert PictureName and Image Successfully");
-
-
+                            PictureBox pic = new PictureBox();
+                            pic.Image = Image.FromStream(ms);
+                            pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                            pic.Width = 150;
+                            pic.Height = 100;
+                            pic.Click += Pic_Click;  //註冊方法  //點選圖片放大
+                            this.flowLayoutPanel1.Controls.Add(pic);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Record");
+                    }
                 }
-
-
             }
-
-            //////string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            //for (int i = 0; i < files.Length; i++)
-            //{
-            //    PictureBox pic = new PictureBox();  //建立PictureBoxg實體pic
-            //    pic.Image = Image.FromFile(files[i]);
-            //    pic.SizeMode = PictureBoxSizeMode.StretchImage;
-            //    pic.Width = 120;
-            //    pic.Height = 80;
-
-            //    //=================================
-            //    //點選圖片放大
-            //    //pic.Click += Pic_Click;  //註冊方法
-
-            //    this.flowLayoutPanel1.Controls.Add(pic);
-            //}
-
-
-
-
-
-
-            //        //System.IO.MemoryStream ms = new System.IO.MemoryStream(); //建立MemoryStream ms
-            //        //this.pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            //        //bytes = ms.GetBuffer();   //回傳bytes陣列
-
-            //        //command.Parameters.Add("@PictureName", SqlDbType.Text).Value = this.textBox1.Text;
-            //        //command.Parameters.Add ("@Picture", SqlDbType.Image).Value = bytes;
-
-            //        //conn.Open();  //執行command前在open即可
-
-            //        //command.ExecuteNonQuery();  //執行command
-            //        //MessageBox.Show("Insert Description and Image Successfully");
-
-            //    }
-            ////Auto conn.Close();
-
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.Message);
+                this.pictureBox1.Image = this.pictureBox1.ErrorImage;
             }
+        }
 
+        private void Pic_Click(object sender, EventArgs e)
+        {
+            Form f = new Form();
+            f.BackgroundImage = ((PictureBox)sender).Image;
+            f.BackgroundImageLayout = ImageLayout.Stretch;
+            f.Show();
         }
 
 

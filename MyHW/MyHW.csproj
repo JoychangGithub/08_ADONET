@@ -138,6 +138,12 @@
     <Compile Include="FrmMyAlbum_V2.Designer.cs">
       <DependentUpon>FrmMyAlbum_V2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTreeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTreeView.Designer.cs">
+      <DependentUpon>FrmTreeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUpdatePics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMyAlbum_V2.resx">
       <DependentUpon>FrmMyAlbum_V2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTreeView.resx">
+      <DependentUpon>FrmTreeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdatePics.resx">
       <DependentUpon>FrmUpdatePics.cs</DependentUpon>

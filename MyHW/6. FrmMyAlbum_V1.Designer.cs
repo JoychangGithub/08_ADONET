@@ -44,10 +44,16 @@ namespace MyHW
             this.myPictureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.myAlbumDataSet1 = new MyHW.MyAlbumDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.picturePictureBox = new System.Windows.Forms.PictureBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.pictureNameTextBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -61,12 +67,6 @@ namespace MyHW
             this.myCityTableAdapter1 = new MyHW.MyAlbumDataSetTableAdapters.MyCityTableAdapter();
             this.myPictureTableAdapter1 = new MyHW.MyAlbumDataSetTableAdapters.MyPictureTableAdapter();
             this.tableAdapterManager = new MyHW.MyAlbumDataSetTableAdapters.TableAdapterManager();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.picturePictureBox = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             pictureLabel = new System.Windows.Forms.Label();
@@ -84,8 +84,8 @@ namespace MyHW
             this.myPictureBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myPictureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myAlbumDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myPictureDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myPictureDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
@@ -96,9 +96,10 @@ namespace MyHW
             | System.Windows.Forms.AnchorStyles.Right)));
             pictureLabel.AutoSize = true;
             pictureLabel.Font = new System.Drawing.Font("微軟正黑體 Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            pictureLabel.Location = new System.Drawing.Point(9, 12);
+            pictureLabel.Location = new System.Drawing.Point(6, 8);
+            pictureLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             pictureLabel.Name = "pictureLabel";
-            pictureLabel.Size = new System.Drawing.Size(63, 20);
+            pictureLabel.Size = new System.Drawing.Size(43, 15);
             pictureLabel.TabIndex = 35;
             pictureLabel.Text = "Picture:";
             // 
@@ -108,9 +109,10 @@ namespace MyHW
             | System.Windows.Forms.AnchorStyles.Right)));
             descriptionLabel.AutoSize = true;
             descriptionLabel.Font = new System.Drawing.Font("微軟正黑體 Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            descriptionLabel.Location = new System.Drawing.Point(546, 197);
+            descriptionLabel.Location = new System.Drawing.Point(364, 131);
+            descriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(97, 20);
+            descriptionLabel.Size = new System.Drawing.Size(66, 15);
             descriptionLabel.TabIndex = 37;
             descriptionLabel.Text = "Description:";
             // 
@@ -120,18 +122,20 @@ namespace MyHW
             | System.Windows.Forms.AnchorStyles.Right)));
             pictureNameLabel.AutoSize = true;
             pictureNameLabel.Font = new System.Drawing.Font("微軟正黑體 Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            pictureNameLabel.Location = new System.Drawing.Point(546, 102);
+            pictureNameLabel.Location = new System.Drawing.Point(364, 68);
+            pictureNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             pictureNameLabel.Name = "pictureNameLabel";
-            pictureNameLabel.Size = new System.Drawing.Size(112, 20);
+            pictureNameLabel.Size = new System.Drawing.Size(76, 15);
             pictureNameLabel.TabIndex = 39;
             pictureNameLabel.Text = "Picture Name:";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1124, 3);
+            this.button1.Location = new System.Drawing.Point(806, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 40);
+            this.button1.Size = new System.Drawing.Size(73, 27);
             this.button1.TabIndex = 0;
             this.button1.Text = "Tool CRUD";
             this.button1.UseVisualStyleBackColor = true;
@@ -143,9 +147,10 @@ namespace MyHW
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(342, 20);
+            this.label1.Location = new System.Drawing.Point(228, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 63);
+            this.label1.Size = new System.Drawing.Size(271, 42);
             this.label1.TabIndex = 3;
             this.label1.Text = "My Album";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,6 +163,7 @@ namespace MyHW
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -169,15 +175,15 @@ namespace MyHW
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer1);
-            this.splitContainer2.Size = new System.Drawing.Size(968, 641);
-            this.splitContainer2.SplitterDistance = 114;
+            this.splitContainer2.Size = new System.Drawing.Size(702, 467);
+            this.splitContainer2.SplitterDistance = 83;
+            this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 5;
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -204,17 +210,17 @@ namespace MyHW
             this.splitContainer1.Panel2.Controls.Add(this.myPictureDataGridView);
             this.splitContainer1.Panel2.Controls.Add(this.linkLabel2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.splitContainer1.Size = new System.Drawing.Size(968, 523);
-            this.splitContainer1.SplitterDistance = 169;
-            this.splitContainer1.SplitterWidth = 6;
+            this.splitContainer1.Size = new System.Drawing.Size(702, 381);
+            this.splitContainer1.SplitterDistance = 121;
             this.splitContainer1.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 14);
+            this.label2.Location = new System.Drawing.Point(14, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 18);
+            this.label2.Size = new System.Drawing.Size(0, 12);
             this.label2.TabIndex = 0;
             // 
             // myPictureBindingNavigator
@@ -238,15 +244,15 @@ namespace MyHW
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2});
-            this.myPictureBindingNavigator.Location = new System.Drawing.Point(121, 418);
+            this.myPictureBindingNavigator.Location = new System.Drawing.Point(81, 279);
             this.myPictureBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.myPictureBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.myPictureBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.myPictureBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.myPictureBindingNavigator.Name = "myPictureBindingNavigator";
-            this.myPictureBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.myPictureBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.myPictureBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.myPictureBindingNavigator.Size = new System.Drawing.Size(320, 71);
+            this.myPictureBindingNavigator.Size = new System.Drawing.Size(260, 47);
             this.myPictureBindingNavigator.TabIndex = 35;
             this.myPictureBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -263,14 +269,32 @@ namespace MyHW
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(40, 66);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(27, 44);
             this.bindingNavigatorCountItem.Text = "/{0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目總數";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 44);
+            this.bindingNavigatorMoveFirstItem.Text = "移到最前面";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 44);
+            this.bindingNavigatorMovePreviousItem.Text = "移到上一個";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 71);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 47);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -278,19 +302,65 @@ namespace MyHW
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 30);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "目前的位置";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 71);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 47);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 44);
+            this.bindingNavigatorMoveNextItem.Text = "移到下一個";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 44);
+            this.bindingNavigatorMoveLastItem.Text = "移到最後面";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 71);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 47);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackgroundImage = global::MyHW.Properties.Resources.background171;
+            this.btnUpdate.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnUpdate.Location = new System.Drawing.Point(360, 28);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(139, 26);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "Update Picture";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // picturePictureBox
+            // 
+            this.picturePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.myPictureBindingSource, "Picture", true));
+            this.picturePictureBox.Image = global::MyHW.Properties.Resources.background1;
+            this.picturePictureBox.InitialImage = global::MyHW.Properties.Resources.background1;
+            this.picturePictureBox.Location = new System.Drawing.Point(17, 28);
+            this.picturePictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.picturePictureBox.Name = "picturePictureBox";
+            this.picturePictureBox.Size = new System.Drawing.Size(329, 237);
+            this.picturePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturePictureBox.TabIndex = 36;
+            this.picturePictureBox.TabStop = false;
             // 
             // descriptionTextBox
             // 
@@ -298,11 +368,12 @@ namespace MyHW
             | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.myPictureBindingSource, "Description", true));
             this.descriptionTextBox.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.descriptionTextBox.Location = new System.Drawing.Point(540, 220);
+            this.descriptionTextBox.Location = new System.Drawing.Point(360, 147);
+            this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.ReadOnly = true;
-            this.descriptionTextBox.Size = new System.Drawing.Size(241, 216);
+            this.descriptionTextBox.Size = new System.Drawing.Size(209, 145);
             this.descriptionTextBox.TabIndex = 38;
             // 
             // pictureNameTextBox
@@ -311,19 +382,21 @@ namespace MyHW
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.myPictureBindingSource, "PictureName", true));
             this.pictureNameTextBox.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.pictureNameTextBox.Location = new System.Drawing.Point(540, 125);
+            this.pictureNameTextBox.Location = new System.Drawing.Point(360, 83);
+            this.pictureNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureNameTextBox.Multiline = true;
             this.pictureNameTextBox.Name = "pictureNameTextBox";
             this.pictureNameTextBox.ReadOnly = true;
-            this.pictureNameTextBox.Size = new System.Drawing.Size(241, 48);
+            this.pictureNameTextBox.Size = new System.Drawing.Size(209, 33);
             this.pictureNameTextBox.TabIndex = 40;
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 501);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 359);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(793, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(577, 22);
             this.statusStrip1.TabIndex = 34;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -338,11 +411,12 @@ namespace MyHW
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.myPictureDataGridView.DataSource = this.myPictureBindingSource;
-            this.myPictureDataGridView.Location = new System.Drawing.Point(683, 442);
+            this.myPictureDataGridView.Location = new System.Drawing.Point(455, 295);
+            this.myPictureDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.myPictureDataGridView.Name = "myPictureDataGridView";
             this.myPictureDataGridView.RowHeadersWidth = 62;
             this.myPictureDataGridView.RowTemplate.Height = 31;
-            this.myPictureDataGridView.Size = new System.Drawing.Size(69, 72);
+            this.myPictureDataGridView.Size = new System.Drawing.Size(46, 48);
             this.myPictureDataGridView.TabIndex = 33;
             this.myPictureDataGridView.Visible = false;
             // 
@@ -392,9 +466,10 @@ namespace MyHW
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.linkLabel2.LinkColor = System.Drawing.Color.LightSeaGreen;
-            this.linkLabel2.Location = new System.Drawing.Point(1050, 1486);
+            this.linkLabel2.Location = new System.Drawing.Point(700, 991);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(92, 46);
+            this.linkLabel2.Size = new System.Drawing.Size(62, 31);
             this.linkLabel2.TabIndex = 2;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "巴黎";
@@ -414,77 +489,14 @@ namespace MyHW
             this.tableAdapterManager.MyPictureTableAdapter = this.myPictureTableAdapter1;
             this.tableAdapterManager.UpdateOrder = MyHW.MyAlbumDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 66);
-            this.bindingNavigatorMoveFirstItem.Text = "移到最前面";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 66);
-            this.bindingNavigatorMovePreviousItem.Text = "移到上一個";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 66);
-            this.bindingNavigatorMoveNextItem.Text = "移到下一個";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 66);
-            this.bindingNavigatorMoveLastItem.Text = "移到最後面";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BackgroundImage = global::MyHW.Properties.Resources.background171;
-            this.btnUpdate.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnUpdate.Location = new System.Drawing.Point(540, 42);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(139, 39);
-            this.btnUpdate.TabIndex = 16;
-            this.btnUpdate.Text = "Update Picture";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // picturePictureBox
-            // 
-            this.picturePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picturePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.myPictureBindingSource, "Picture", true));
-            this.picturePictureBox.Image = global::MyHW.Properties.Resources.background1;
-            this.picturePictureBox.InitialImage = global::MyHW.Properties.Resources.background1;
-            this.picturePictureBox.Location = new System.Drawing.Point(25, 42);
-            this.picturePictureBox.Name = "picturePictureBox";
-            this.picturePictureBox.Size = new System.Drawing.Size(493, 355);
-            this.picturePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturePictureBox.TabIndex = 36;
-            this.picturePictureBox.TabStop = false;
-            // 
             // FrmMyAlbum_V1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 641);
+            this.ClientSize = new System.Drawing.Size(702, 467);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMyAlbum_V1";
             this.Text = "FrmMyAlbum_V1";
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -502,8 +514,8 @@ namespace MyHW
             this.myPictureBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myPictureBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myAlbumDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myPictureDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myPictureDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
