@@ -18,12 +18,16 @@ namespace MyHW
         {
             InitializeComponent();
 
-            CreateCountryTreeView();
+            CreateCountrylist(); //建立國家清單
+            CreateTreeView();   //建立國家與城市TreeView
 
         }
 
 
-        private void CreateCountryTreeView()
+
+        List<string> countrycountList = new List<string>();  //建立國家與城市數量清單
+        List<string> countryList = new List<string>();  //建立國家清單
+        private void CreateCountrylist()
         {
             try
             {
@@ -31,58 +35,22 @@ namespace MyHW
                 {
                     SqlCommand command = new SqlCommand();
                     command.Connection = conn;
-                    command.CommandText = "select * from Customers order by Country";
+                    command.CommandText = "select country, count(country) as number from Customers group by country order by Country";
                     conn.Open();
 
                     SqlDataReader dataReader = command.ExecuteReader();
-                    TreeNode TNcountry=null;
-                    TreeNode TNcity = null;
+
                     while (dataReader.Read())
-                    {
-                        
+                    {                    
                         string country = dataReader["Country"].ToString();
-                        string city = dataReader["City"].ToString();
+                        string number = dataReader["number"].ToString();
 
-                        //加入國家
-                        if (treeView1.Nodes[country] == null)
-                        {
-                            TreeNode node = new TreeNode();
-                            node.Text = country;
-                            node.Name = country;
-                            node.Tag = country;  //ID
-                           
-                            TNcountry = node;
-                            this.treeView1.Nodes.Add(node);  //加入主item
-                        }
-                        else 
-                        {
-                            TNcountry = treeView1.Nodes[country];
-                        }
+                        string countrycount = country + "(" + number + ")";
 
-                        //加入城市
-                        if (TNcountry.Nodes[city] == null)
-                        {
-                            TreeNode node = new TreeNode();
-                            node.Text = city;
-                            node.Name = city;
-                            TNcity = node;
-                            TNcountry.Nodes.Add(node);  //加入次item
-                        }
-                        else
-                        {
-                            TNcity = TNcountry.Nodes[city];
-
-                            //TreeNode node = new TreeNode();
-                            //node.Text = city;
-                            //node.Name = city;
-                            //TNcity = node;
-                            //TNcountry.Nodes.Add(node);  //加入次item
-
-                        }
+                        countrycountList.Add(countrycount);
+                        countryList.Add(country);
                     }
-
                 }
-
             }
             catch (Exception ex)
             {
@@ -90,36 +58,65 @@ namespace MyHW
             }
         }
 
+        TreeNode TNcountry = null;
+        TreeNode TNcity = null;
+        private void CreateTreeView()
+        {
+            for (int i = 0; i < countryList.Count; i++)
+            {
+                TreeNode node = new TreeNode();
+                node.Text = countrycountList[i];
+                node.Name = countrycountList[i];
+                node.Tag = 1;  //ID
+                string country = countryList[i];
+                TNcountry = node;
+                this.treeView1.Nodes.Add(node);  //加入主item
+
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                    {
+                        SqlCommand command = new SqlCommand();
+                        command.Connection = conn;
+                        command.CommandText = $"select distinct city from Customers where Country = '{country}'";
+                        conn.Open();
+
+                        SqlDataReader dataReader = command.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            string city = dataReader["city"].ToString();
+
+                            TreeNode node2 = new TreeNode();
+                            node2.Text = city;
+                            node2.Name = city;
+                            node2.Tag = 2;  //ID
+                            TNcity = node2;
+                            TNcountry.Nodes.Add(TNcity);  //加入次item
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        //展開dataGridView
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             string city = treeView1.SelectedNode.Text;
+            int cityTag = (int) treeView1.SelectedNode.Tag;
 
-            //DisConnected
-            this.customersTableAdapter1.FillByCity(this.nwDataSet1.Customers, city);
-            this.dataGridView1.DataSource = this.nwDataSet1.Customers;
+            if (cityTag == 2)  //只有展開城市時才會顯示資訊在dataGridView
+            {
+                this.customersTableAdapter1.FillByCity(this.nwDataSet1.Customers, city);
 
-
+                this.bindingSource1.DataSource = this.nwDataSet1.Customers;
+                this.dataGridView2.DataSource = this.bindingSource1;
+                int count = this.bindingSource1.Count;
+                this.label1.Text = "共 " +　count.ToString() +"個  '"+ city +"' "+"Customers";
+            }
         }
-
-
-
-
-        //private void Node_Click(object sender, EventArgs e)
-        //{
-        //    //LinkLabel node = sender as LinkLabel;  //轉成原LinkLabel
-        //    //if (x != null) 
-        //    //{
-        //    //    MessageBox.Show(x.Text);
-        //    //}
-
-        //    //DisConnected
-        //    string country= node.Tag;
-
-        //    this.customersTableAdapter1.FillByCountry(this.nwDataSet1.Customers, country);
-        //    this.dataGridView1.DataSource = this.nwDataSet1.Customers;
-        //}
-
-
-
     }
 }

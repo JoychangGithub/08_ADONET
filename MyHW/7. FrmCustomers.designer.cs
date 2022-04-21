@@ -30,19 +30,19 @@ namespace MyHW
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustomers));
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "XXX",
             "aaa",
             "bbb"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "YYY",
             "ccc",
             "ddd"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "ZZZ",
             "eee",
             "fff"}, -1);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustomers));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -56,13 +56,13 @@ namespace MyHW
             this.groupByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.countryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.無ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.ImageList2 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -172,46 +172,29 @@ namespace MyHW
             this.無ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.無ToolStripMenuItem.Text = "無";
             // 
-            // dataGridView1
+            // ImageList2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(241, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(424, 174);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.listView2.HideSelection = false;
-            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
-            this.listView2.Location = new System.Drawing.Point(14, 63);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(210, 97);
-            this.listView2.TabIndex = 6;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 94;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Age";
-            this.columnHeader2.Width = 81;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Gender";
+            this.ImageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList2.ImageStream")));
+            this.ImageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList2.Images.SetKeyName(0, "FLGGERM.ICO");
+            this.ImageList2.Images.SetKeyName(1, "CTRCAN.ICO");
+            this.ImageList2.Images.SetKeyName(2, "CTRFRAN.ICO");
+            this.ImageList2.Images.SetKeyName(3, "CTRGERM.ICO");
+            this.ImageList2.Images.SetKeyName(4, "CTRITALY.ICO");
+            this.ImageList2.Images.SetKeyName(5, "CTRJAPAN.ICO");
+            this.ImageList2.Images.SetKeyName(6, "CTRMEX.ICO");
+            this.ImageList2.Images.SetKeyName(7, "CTRSKOR.ICO");
+            this.ImageList2.Images.SetKeyName(8, "CTRSPAIN.ICO");
+            this.ImageList2.Images.SetKeyName(9, "CTRUK.ICO");
+            this.ImageList2.Images.SetKeyName(10, "CTRUSA.ICO");
+            this.ImageList2.Images.SetKeyName(11, "FLGASTRL.ICO");
+            this.ImageList2.Images.SetKeyName(12, "FLGAUSTA.ICO");
+            this.ImageList2.Images.SetKeyName(13, "FLGBELG.ICO");
+            this.ImageList2.Images.SetKeyName(14, "FLGBRAZL.ICO");
+            this.ImageList2.Images.SetKeyName(15, "FLGCAN.ICO");
+            this.ImageList2.Images.SetKeyName(16, "FLGDEN.ICO");
+            this.ImageList2.Images.SetKeyName(17, "FLGFIN.ICO");
+            this.ImageList2.Images.SetKeyName(18, "FLGFRAN.ICO");
             // 
             // ImageList1
             // 
@@ -237,29 +220,46 @@ namespace MyHW
             this.ImageList1.Images.SetKeyName(17, "FLGFIN.ICO");
             this.ImageList1.Images.SetKeyName(18, "FLGFRAN.ICO");
             // 
-            // ImageList2
+            // dataGridView1
             // 
-            this.ImageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList2.ImageStream")));
-            this.ImageList2.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList2.Images.SetKeyName(0, "FLGGERM.ICO");
-            this.ImageList2.Images.SetKeyName(1, "CTRCAN.ICO");
-            this.ImageList2.Images.SetKeyName(2, "CTRFRAN.ICO");
-            this.ImageList2.Images.SetKeyName(3, "CTRGERM.ICO");
-            this.ImageList2.Images.SetKeyName(4, "CTRITALY.ICO");
-            this.ImageList2.Images.SetKeyName(5, "CTRJAPAN.ICO");
-            this.ImageList2.Images.SetKeyName(6, "CTRMEX.ICO");
-            this.ImageList2.Images.SetKeyName(7, "CTRSKOR.ICO");
-            this.ImageList2.Images.SetKeyName(8, "CTRSPAIN.ICO");
-            this.ImageList2.Images.SetKeyName(9, "CTRUK.ICO");
-            this.ImageList2.Images.SetKeyName(10, "CTRUSA.ICO");
-            this.ImageList2.Images.SetKeyName(11, "FLGASTRL.ICO");
-            this.ImageList2.Images.SetKeyName(12, "FLGAUSTA.ICO");
-            this.ImageList2.Images.SetKeyName(13, "FLGBELG.ICO");
-            this.ImageList2.Images.SetKeyName(14, "FLGBRAZL.ICO");
-            this.ImageList2.Images.SetKeyName(15, "FLGCAN.ICO");
-            this.ImageList2.Images.SetKeyName(16, "FLGDEN.ICO");
-            this.ImageList2.Images.SetKeyName(17, "FLGFIN.ICO");
-            this.ImageList2.Images.SetKeyName(18, "FLGFRAN.ICO");
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(241, 5);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(424, 174);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView2.HideSelection = false;
+            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
+            this.listView2.Location = new System.Drawing.Point(14, 63);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(210, 97);
+            this.listView2.TabIndex = 6;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 94;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Age";
+            this.columnHeader2.Width = 81;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Gender";
             // 
             // FrmCustomers
             // 
