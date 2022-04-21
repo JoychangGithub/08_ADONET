@@ -121,14 +121,14 @@
   <data name="background61" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background61.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background29" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background29.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="桌布3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\桌布3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background30.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background19.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,11 +145,11 @@
   <data name="001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="background30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background30.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background33" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background33.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background311" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background311.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +160,17 @@
   <data name="background321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background321.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="background171" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background171.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background19" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background19.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="桌布4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\桌布4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background29" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background29.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background181" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background181.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,11 +181,17 @@
   <data name="background16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background16.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background17" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background17.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quiz2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quiz2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background20.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +202,12 @@
   <data name="background31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background31.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="桌布2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\桌布2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="桌布1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\桌布1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,6 +216,12 @@
   </data>
   <data name="background7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background26.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background41.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,13 +235,13 @@
   <data name="background5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="quiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quiz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background26" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background26.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="quiz1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quiz1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background171" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background171.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="quiz3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quiz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -244,7 +244,7 @@ namespace MyHW
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2});
-            this.myPictureBindingNavigator.Location = new System.Drawing.Point(81, 279);
+            this.myPictureBindingNavigator.Location = new System.Drawing.Point(42, 281);
             this.myPictureBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.myPictureBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.myPictureBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -252,7 +252,7 @@ namespace MyHW
             this.myPictureBindingNavigator.Name = "myPictureBindingNavigator";
             this.myPictureBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.myPictureBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.myPictureBindingNavigator.Size = new System.Drawing.Size(286, 47);
+            this.myPictureBindingNavigator.Size = new System.Drawing.Size(274, 47);
             this.myPictureBindingNavigator.TabIndex = 35;
             this.myPictureBindingNavigator.Text = "bindingNavigator1";
             // 

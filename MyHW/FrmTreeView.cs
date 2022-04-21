@@ -17,13 +17,9 @@ namespace MyHW
         public FrmTreeView()
         {
             InitializeComponent();
-
             CreateCountrylist(); //建立國家清單
             CreateTreeView();   //建立國家與城市TreeView
-
         }
-
-
 
         List<string> countrycountList = new List<string>();  //建立國家與城市數量清單
         List<string> countryList = new List<string>();  //建立國家清單

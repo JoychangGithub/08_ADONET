@@ -52,13 +52,14 @@ namespace MyHW
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackgroundImage = global::MyHW.Properties.Resources.background61;
+            this.splitContainer1.Panel1.BackgroundImage = global::MyHW.Properties.Resources.桌布3;
+            this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             // 
             // splitContainer1.Panel2
             // 
@@ -72,11 +73,13 @@ namespace MyHW
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.BackgroundImage = global::MyHW.Properties.Resources.桌布1;
+            this.splitContainer2.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer2.Panel1.Controls.Add(this.button1);
             this.splitContainer2.Panel1.Controls.Add(this.btn_FrmLogon);
             this.splitContainer2.Panel1.Controls.Add(this.btn_FrmCustomers);
@@ -93,12 +96,12 @@ namespace MyHW
             // 
             // btn_FrmLogon
             // 
-            this.btn_FrmLogon.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_FrmLogon.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_FrmLogon.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_FrmLogon.Location = new System.Drawing.Point(11, 234);
-            this.btn_FrmLogon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_FrmLogon.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FrmLogon.Name = "btn_FrmLogon";
-            this.btn_FrmLogon.Size = new System.Drawing.Size(231, 28);
+            this.btn_FrmLogon.Size = new System.Drawing.Size(191, 28);
             this.btn_FrmLogon.TabIndex = 7;
             this.btn_FrmLogon.Text = "7. FrmLogon";
             this.btn_FrmLogon.UseVisualStyleBackColor = true;
@@ -106,12 +109,12 @@ namespace MyHW
             // 
             // btn_FrmCustomers
             // 
-            this.btn_FrmCustomers.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_FrmCustomers.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_FrmCustomers.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_FrmCustomers.Location = new System.Drawing.Point(11, 202);
-            this.btn_FrmCustomers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_FrmCustomers.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FrmCustomers.Name = "btn_FrmCustomers";
-            this.btn_FrmCustomers.Size = new System.Drawing.Size(231, 28);
+            this.btn_FrmCustomers.Size = new System.Drawing.Size(191, 28);
             this.btn_FrmCustomers.TabIndex = 6;
             this.btn_FrmCustomers.Text = "7. FrmCustomers";
             this.btn_FrmCustomers.UseVisualStyleBackColor = true;
@@ -119,11 +122,11 @@ namespace MyHW
             // 
             // btn_FrmMyAlbum_V1
             // 
-            this.btn_FrmMyAlbum_V1.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_FrmMyAlbum_V1.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_FrmMyAlbum_V1.Location = new System.Drawing.Point(11, 170);
-            this.btn_FrmMyAlbum_V1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_FrmMyAlbum_V1.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FrmMyAlbum_V1.Name = "btn_FrmMyAlbum_V1";
-            this.btn_FrmMyAlbum_V1.Size = new System.Drawing.Size(231, 28);
+            this.btn_FrmMyAlbum_V1.Size = new System.Drawing.Size(191, 28);
             this.btn_FrmMyAlbum_V1.TabIndex = 5;
             this.btn_FrmMyAlbum_V1.Text = "6. FrmMyAlbum_V1";
             this.btn_FrmMyAlbum_V1.UseVisualStyleBackColor = true;
@@ -131,11 +134,11 @@ namespace MyHW
             // 
             // btn_FrmAdventureWorks
             // 
-            this.btn_FrmAdventureWorks.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_FrmAdventureWorks.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_FrmAdventureWorks.Location = new System.Drawing.Point(11, 138);
-            this.btn_FrmAdventureWorks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_FrmAdventureWorks.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FrmAdventureWorks.Name = "btn_FrmAdventureWorks";
-            this.btn_FrmAdventureWorks.Size = new System.Drawing.Size(231, 28);
+            this.btn_FrmAdventureWorks.Size = new System.Drawing.Size(191, 28);
             this.btn_FrmAdventureWorks.TabIndex = 4;
             this.btn_FrmAdventureWorks.Text = "5. FrmAdventureWorks";
             this.btn_FrmAdventureWorks.UseVisualStyleBackColor = true;
@@ -143,11 +146,11 @@ namespace MyHW
             // 
             // btn_FrmOverview
             // 
-            this.btn_FrmOverview.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_FrmOverview.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_FrmOverview.Location = new System.Drawing.Point(11, 106);
-            this.btn_FrmOverview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_FrmOverview.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FrmOverview.Name = "btn_FrmOverview";
-            this.btn_FrmOverview.Size = new System.Drawing.Size(231, 28);
+            this.btn_FrmOverview.Size = new System.Drawing.Size(191, 28);
             this.btn_FrmOverview.TabIndex = 3;
             this.btn_FrmOverview.Text = "4. FrmOverview";
             this.btn_FrmOverview.UseVisualStyleBackColor = true;
@@ -155,11 +158,11 @@ namespace MyHW
             // 
             // btn_FrmProducts
             // 
-            this.btn_FrmProducts.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_FrmProducts.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_FrmProducts.Location = new System.Drawing.Point(11, 74);
-            this.btn_FrmProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_FrmProducts.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FrmProducts.Name = "btn_FrmProducts";
-            this.btn_FrmProducts.Size = new System.Drawing.Size(231, 28);
+            this.btn_FrmProducts.Size = new System.Drawing.Size(191, 28);
             this.btn_FrmProducts.TabIndex = 2;
             this.btn_FrmProducts.Text = "3. FrmProducts";
             this.btn_FrmProducts.UseVisualStyleBackColor = true;
@@ -167,11 +170,11 @@ namespace MyHW
             // 
             // btn_FrmCategoryProducts
             // 
-            this.btn_FrmCategoryProducts.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_FrmCategoryProducts.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_FrmCategoryProducts.Location = new System.Drawing.Point(11, 42);
-            this.btn_FrmCategoryProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_FrmCategoryProducts.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FrmCategoryProducts.Name = "btn_FrmCategoryProducts";
-            this.btn_FrmCategoryProducts.Size = new System.Drawing.Size(231, 28);
+            this.btn_FrmCategoryProducts.Size = new System.Drawing.Size(191, 28);
             this.btn_FrmCategoryProducts.TabIndex = 1;
             this.btn_FrmCategoryProducts.Text = "2. FrmCategoryProducts";
             this.btn_FrmCategoryProducts.UseVisualStyleBackColor = true;
@@ -179,11 +182,11 @@ namespace MyHW
             // 
             // btn_標準練習
             // 
-            this.btn_標準練習.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_標準練習.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_標準練習.Location = new System.Drawing.Point(11, 10);
-            this.btn_標準練習.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_標準練習.Margin = new System.Windows.Forms.Padding(2);
             this.btn_標準練習.Name = "btn_標準練習";
-            this.btn_標準練習.Size = new System.Drawing.Size(231, 28);
+            this.btn_標準練習.Size = new System.Drawing.Size(191, 28);
             this.btn_標準練習.TabIndex = 0;
             this.btn_標準練習.Text = "1. Frm標準練習";
             this.btn_標準練習.UseVisualStyleBackColor = true;
@@ -191,15 +194,20 @@ namespace MyHW
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("微軟正黑體", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::MyHW.Properties.Resources.quiz2;
+            this.button1.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(11, 266);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(42, 339);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 28);
+            this.button1.Size = new System.Drawing.Size(160, 47);
             this.button1.TabIndex = 8;
             this.button1.Text = "Quiz - TreeView";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmMain
             // 
@@ -207,7 +215,7 @@ namespace MyHW
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 615);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";
             this.Text = "FrmMain";
             this.splitContainer1.Panel2.ResumeLayout(false);

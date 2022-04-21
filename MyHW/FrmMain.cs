@@ -66,5 +66,11 @@ namespace MyHW
             FrmLogon LogonForm = new FrmLogon();
             LogonForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmTreeView TreeviewForm = new FrmTreeView();
+            TreeviewForm.Show();
+        }
     }
 }
