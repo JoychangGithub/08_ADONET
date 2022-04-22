@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,25 +18,90 @@ namespace MyHW
         public FrmMyAlbum_V2()
         {
             InitializeComponent();
-            ShowCityLink();  //顯示城市
+            ShowCityLink();  //顯示城市linklabel
+            ShowCityphotos();  //顯示城市dataGridView
             this.flowLayoutPanel2.AllowDrop = true;  //允許拖曳照片至flowLayoutPanel2
             this.flowLayoutPanel2.DragEnter += FlowLayoutPanel_DragEnter;
             this.flowLayoutPanel2.DragDrop += FlowLayoutPanel_DragDrop;
         }
 
+        private void ShowCityphotos()
+        {
+            //this.myPictureTableAdapter1.Fill(this.myAlbumDataSet.MyPicture);      
+            this.myPictureTableAdapter1.FillByShowCityName(this.myAlbumDataSet1.MyPicture);
+            this.bindingSource1.DataSource = this.myAlbumDataSet1.MyPicture;
+            this.dataGridView1.DataSource = this.bindingSource1;
+
+            this.textBox1.DataBindings.Add("Text", this.bindingSource1, "PictureID");
+            this.textBox2.DataBindings.Add("Text", this.bindingSource1, "CityID");
+            this.textBox4.DataBindings.Add("Text", this.bindingSource1, "PictureName");
+            this.textBox5.DataBindings.Add("Text", this.bindingSource1, "Description");
+            this.pictureBox3.DataBindings.Add("Image", this.bindingSource1, "Picture", true);
+            this.comboBox2.DataBindings.Add("Text", this.bindingSource1, "CityName") ;
+            //this.dateTimePicker1.DataBindings.Add("Value", this.bindingSource1, "Date");
+
+            this.bindingNavigator1.BindingSource = this.bindingSource1;
+            
+        }
+
+        Dictionary<string, int> dicPic = new Dictionary<string, int>();
+        private void InsertPicture(PictureBox pic)
+        {
+            //Insert Image into Table
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.MyAlbumDatabaseConnectionString))
+                {
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = $"Insert into MyPicture (Picture, Cityid) values (@Picture, @Cityid)";
+                    command.Connection = conn;
+
+                    string cityname = comboBox1.Text;
+
+                    int cityid = dicPic[cityname];
+
+
+                    byte[] bytes;  //宣告變數bytes
+                    
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream(); //建立MemoryStream ms
+                    pic.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    bytes = ms.GetBuffer();   //回傳bytes陣列
+
+
+                    command.Parameters.Add("@Picture", SqlDbType.Image).Value = bytes;
+                    command.Parameters.Add("@Cityid", SqlDbType.Int).Value = cityid;
+
+                    conn.Open();  //執行command前在open即可
+
+                    command.ExecuteNonQuery();  //執行command
+                    MessageBox.Show("Insert Picture Successfully");
+
+                }//Auto conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void FlowLayoutPanel_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            for (int i = 0; i < files.Length; i++) 
+            for (int i = 0; i < files.Length; i++)
             {
                 PictureBox pic = new PictureBox();
                 pic.Image = Image.FromFile(files[i]);
                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                //pic.Width = 120;
-                //pic.Height = 80;
-                pic.Click += Pic_Click;
+                pic.Width = 200;
+                pic.Height = 150;
+                pic.Padding = new Padding(8);     //需先設定邊框格式，下面才會被變更
+                pic.BorderStyle = BorderStyle.Fixed3D;
 
+                pic.MouseEnter += Pic_MouseEnter;  //註冊方法  //點選圖片邊框為紅色
+                pic.MouseLeave += Pic_MouseLeave;  //離開圖片邊框恢復無色
                 this.flowLayoutPanel2.Controls.Add(pic);
+
+                InsertPicture(pic);               
             }
         }
 
@@ -49,10 +115,10 @@ namespace MyHW
             //動態顯示城市Linklabel
             //MessageBox.Show(this.myCityTableAdapter.Connection.ConnectionString);
 
-            this.myCityTableAdapter.Fill(this.myAlbumDataSet.MyCity);
-            this.bindingSource1.DataSource = this.myAlbumDataSet.MyCity;
+            this.myCityTableAdapter1.Fill(this.myAlbumDataSet1.MyCity);
+            //this.bindingSource1.DataSource = this.myAlbumDataSet.MyCity;
             //this.dataGridView1.DataSource = this.myAlbumDataSet1.MyCity; //test
-            DataTable table = this.myAlbumDataSet.MyCity;
+            DataTable table = this.myAlbumDataSet1.MyCity;
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 string city = table.Rows[i]["CityName"].ToString();
@@ -78,6 +144,8 @@ namespace MyHW
 
                 //==================================
                 comboBox1.Items.Add(city);
+                comboBox2.Items.Add(city);
+                dicPic.Add(city, i+1);   //CityId=x.Tag +１  //將城市名稱與CityId加入dicPic字典
             }
         }
 
@@ -100,14 +168,14 @@ namespace MyHW
         {
             this.Validate();
             this.myCityBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.myAlbumDataSet);
+            this.tableAdapterManager.UpdateAll(this.myAlbumDataSet1);
 
         }
 
         private void FrmMyAlbum_V2_Load(object sender, EventArgs e)
         {
             // TODO: 這行程式碼會將資料載入 'myAlbumDataSet.MyCity' 資料表。您可以視需要進行移動或移除。
-            this.myCityTableAdapter.Fill(this.myAlbumDataSet.MyCity);
+            this.myCityTableAdapter1.Fill(this.myAlbumDataSet1.MyCity);
 
         }
 
@@ -260,31 +328,70 @@ namespace MyHW
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Show the FolderBrowserDialog.
-            //DialogResult result = folderBrowserDialog1.ShowDialog();
-            // if (result == DialogResult.OK)
-            // {
-            //    folderName = folderBrowserDialog1.SelectedPath;
-            //    if (!fileOpened)
-            //    {
-            //        // No file is opened, bring up openFileDialog in selected path.
-            //        openFileDialog1.InitialDirectory = folderName;
-            //        openFileDialog1.FileName = null;
-            //        openMenuItem.PerformClick();
-            //    }
-            //}
+            try
+            {
+                FolderBrowserDialog dlgFolder = new FolderBrowserDialog();
 
-            // Show the FolderBrowserDialog.
-            FolderBrowserDialog path = new FolderBrowserDialog();
-            path.ShowDialog();
-            //this.txtPath.Text = path.SelectedPath;
+                dlgFolder.Description = "Batch files all image files from this folder.";
 
+                if (dlgFolder.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    DirectoryInfo dirInfo = new DirectoryInfo(dlgFolder.SelectedPath.ToString());
 
+                    FileInfo[] ImageFiles = dirInfo.GetFiles("*.jpg").Concat(dirInfo.GetFiles("*.jepg")).Concat(dirInfo.GetFiles("*.png")).ToArray();
+
+                    for (int i = 0; i < ImageFiles.Length; ++i)
+                    {
+                        FileInfo ImageFile = ImageFiles[i];
+
+                        PictureBox pic = new PictureBox();
+                        pic.Image = Image.FromFile(ImageFile.FullName);
+                        pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                        pic.Width = 200;
+                        pic.Height = 150;
+                        pic.Padding = new Padding(8);     //需先設定邊框格式，下面才會被變更
+                        pic.BorderStyle = BorderStyle.Fixed3D;
+
+                        pic.MouseEnter += Pic_MouseEnter;  //註冊方法  //點選圖片邊框為紅色
+                        pic.MouseLeave += Pic_MouseLeave;  //離開圖片邊框恢復無色
+                        this.flowLayoutPanel2.Controls.Add(pic);
+
+                        InsertPicture(pic);
+                    }
+                    MessageBox.Show("Image Files Process Completed", "Process Completed", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             this.comboBox1.SelectedIndex = 0;  //Lisbon為預設值
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = this.openFileDialog1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.pictureBox3.Image = Image.FromFile(this.openFileDialog1.FileName);
+            }
+            else 
+            {
+                MessageBox.Show("Cancel");
+            }
+        }
+
+        private void myCityBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.myCityBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.myAlbumDataSet1);
+
         }
     }
 }
