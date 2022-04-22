@@ -1761,8 +1761,9 @@ SELECT PictureID, Picture, Cityid, Description, PictureName FROM MyPicture WHERE
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cityid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Cityid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT  PictureID, Picture, p.Cityid, Description, PictureName, CityName\r\nFROM   " +
-                "  MyPicture as p\r\njoin MyCity as c\r\non p.Cityid = c.CityID\r\n";
+            this._commandCollection[2].CommandText = "SELECT  p.PictureID, p.Picture, p.Cityid, p.Description, p.PictureName, c.CityNam" +
+                "e, p.Date\r\nFROM     MyPicture AS p INNER JOIN\r\n               MyCity AS c ON p.C" +
+                "ityid = c.CityId";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         

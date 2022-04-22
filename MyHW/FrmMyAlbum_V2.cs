@@ -74,7 +74,7 @@ namespace MyHW
                     conn.Open();  //執行command前在open即可
 
                     command.ExecuteNonQuery();  //執行command
-                    MessageBox.Show("Insert Picture Successfully");
+                    //MessageBox.Show("Insert Picture Successfully");
 
                 }//Auto conn.Close();
             }
@@ -126,9 +126,9 @@ namespace MyHW
                 LinkLabel x = new LinkLabel();
                 x.Text = city;
                 x.Size = new System.Drawing.Size(100, 50);
-                x.Font = new System.Drawing.Font("Consolas", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-                x.LinkColor = System.Drawing.Color.DarkSeaGreen;
-                x.VisitedLinkColor = System.Drawing.Color.Black;
+                x.Font = new System.Drawing.Font("Segoe Script", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(20)));
+                x.LinkColor = System.Drawing.Color.WhiteSmoke;
+                x.VisitedLinkColor = System.Drawing.Color.LightPink;
                 x.LinkBehavior = LinkBehavior.AlwaysUnderline;
                 //x.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom);
 
@@ -358,7 +358,7 @@ namespace MyHW
 
                         InsertPicture(pic);
                     }
-                    MessageBox.Show("Image Files Process Completed", "Process Completed", MessageBoxButtons.OK);
+                    //MessageBox.Show("Image Files Process Completed", "Process Completed", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)

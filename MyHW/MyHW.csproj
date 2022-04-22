@@ -290,6 +290,23 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>MyAlbumDatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\桌布32.jpg" />
+    <None Include="Resources\桌布181.jpg" />
+    <None Include="Resources\桌布151.jpg" />
+    <None Include="Resources\桌布18.jpg" />
+    <None Include="Resources\桌布42.jpg" />
+    <None Include="Resources\桌布15.jpg" />
+    <None Include="Resources\桌布16.jpg" />
+    <None Include="Resources\桌布10.jpg" />
+    <None Include="Resources\桌布12.jpg" />
+    <None Include="Resources\桌布11.jpg" />
+    <None Include="Resources\桌布8.jpg" />
+    <None Include="Resources\桌布31.jpg" />
+    <None Include="Resources\桌布6.jpg" />
+    <None Include="Resources\桌布7.jpg" />
+    <None Include="Resources\桌布5.jpg" />
+    <None Include="Resources\桌布21.jpg" />
+    <None Include="Resources\桌布41.jpg" />
     <None Include="Resources\quiz.png" />
     <None Include="Resources\quiz2.jpg" />
     <None Include="Resources\quiz1.jpg" />
