@@ -244,14 +244,13 @@ namespace MyHW
             FrmPicViewer f = new FrmPicViewer();
             f.Show();
             f.pictureBox1.Image = pic.Image;
-            f.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            f.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             int id = Convert.ToInt32(pic.Tag);
             int pictureid = dicPicID[id];
             int cityid = dicCityID[id];
             int position = dicPosition[id];
-            MessageBox.Show("id:  " + id + "  pictureid:  " + pictureid + "  cityid:  " + cityid + "position"+ position);
+            //MessageBox.Show("id:  " + id + "  pictureid:  " + pictureid + "  cityid:  " + cityid + "position"+ position);
             this.myPictureTableAdapter1.FillByCityid(this.myAlbumDataSet1.MyPicture, cityid);
-            //f.dataGridView1.DataSource = this.myAlbumDataSet1.MyPicture;
             f.bindingSource1.DataSource = this.myAlbumDataSet1.MyPicture;
             f.dataGridView1.DataSource = f.bindingSource1;
             f.bindingSource1.Position = position;
@@ -379,9 +378,6 @@ namespace MyHW
             this.tableAdapterManager.UpdateAll(this.myAlbumDataSet1);
 
         }
-
-
-
         private void DeletePicture(Image img)
         {
             //delete Image from Table
@@ -408,25 +404,6 @@ namespace MyHW
                         string Picture = dataReader["Picture"].ToString();
                         listBox1.Items.Add(Picture);
                     }
-                    //string PictureID = dataReader["PictureID"].ToString();
-                    //string Picture = dataReader["Picture"].ToString();
-                    //listBox1.Items.Add(PictureID);
-                    //listBox1.Items.Add(Picture);
-                    ////string cityname = comboBox1.Text;
-                    ////int cityid = dicPic[cityname];
-
-
-                    ////byte[] bytes;  //宣告變數bytes
-
-                    //System.IO.MemoryStream ms = new System.IO.MemoryStream(); //建立MemoryStream ms
-                    //pic.Image.S
-                    //bytes = ms.GetBuffer();   //回傳bytes陣列
-
-                    //////command.Parameters.Add("@Picture", SqlDbType.Image).Value = bytes;
-                    //command.Parameters.Add("@Picture", SqlDbType.Image).Value = bytes;                 
-
-                    //command.ExecuteNonQuery();  //執行command
-                    //MessageBox.Show("Delete Picture Successfully");
                 }
             }
             catch (Exception ex)
@@ -457,13 +434,9 @@ namespace MyHW
                     Image img = pic.Image;
 
                     if (img != null)
-                    {
-                       
+                    {                      
                         MessageBox.Show("目前有圖片");
-                        //img.Dispose();
-                        
-
-
+                        //img.Dispose();                        
                     }
 
                     //DeletePicture(img);
@@ -471,8 +444,7 @@ namespace MyHW
                 else 
                 {
                     MessageBox.Show("取消刪除");
-                }
-                
+                }               
             }          
         }
         private void 刪除ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -487,7 +459,6 @@ namespace MyHW
             this.Validate();
             this.myCityBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.myAlbumDataSet1);
-
         }
 
         private void FrmMyAlbum_V2_Load(object sender, EventArgs e)
@@ -497,13 +468,6 @@ namespace MyHW
 
         }
     }
-    //    class Photo 
-    //    {
-    //        internal int cityID;
-    //        internal int pictureID;
-    //        internal int Tag;
-    //        internal int count;
-    //    }
 }
 
 
