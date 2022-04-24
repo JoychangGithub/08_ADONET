@@ -51,7 +51,7 @@ namespace MyHW
             {
                 pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             }
-            else 
+            else
             {
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
@@ -60,25 +60,40 @@ namespace MyHW
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             int position = bindingSource1.Position;
-            int length = this.dataGridView1.Rows.Count;
+            int length = this.dataGridView1.Rows.Count - 1;
+            MessageBox.Show(length.ToString());
+            //bool Flag = true;
 
-            if (position < length)
+            for (int k=1; k > 0; k++)
             {
-                for (int i = position; i < length; i++)
+
+                if (position < length)
                 {
-                    bindingSource1.Position = i;
-                    Application.DoEvents();
-                    Thread.Sleep(700);
+                    for (int i = position; i < length; i++)
+                    {
+                        bindingSource1.Position = i;
+                        Application.DoEvents();
+                        Thread.Sleep(700);
+                    }
+                    k++;
                 }
+                if (bindingSource1.Position == length - 1)
+                {
+
+                    bindingSource1.Position = 0;
+                    position = 0;
+                    //Application.DoEvents();
+                    //Thread.Sleep(700);
+                    k++;
+                }
+                //if (this.Close() == true) 
+                //{
+
+                //}
+                
             }
-            else 
-            {
-                position = 0;
-                bindingSource1.Position = 0;
-                Application.DoEvents();
-                Thread.Sleep(700);
-            }
-            
+
+                        
         }
     }
 }
