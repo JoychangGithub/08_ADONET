@@ -95,6 +95,7 @@ namespace MyHW
 
         private void ShowCityLink()
         {
+            MessageBox.Show(this.myCityTableAdapter1.Connection.ConnectionString);//確定連線的資料庫
             //動態顯示城市Linklabel
             this.myCityTableAdapter1.Fill(this.myAlbumDataSet1.MyCity);
             this.bindingSource1.DataSource = this.myAlbumDataSet1.MyCity;
@@ -135,8 +136,8 @@ namespace MyHW
             //DisConnected
             int cityid = Convert.ToInt32(x.Tag) + 1;
 
-            this.myPictureTableAdapter1.FillByCityID(this.myAlbumDataSet1.MyPicture, cityid);
-            this.bindingSource2.DataSource = this.myAlbumDataSet1.MyPicture;
+            this.myPictureTableAdapter1.FillByCityid(this.myAlbumDataSet1.MyPicture, cityid);
+            //this.bindingSource2.DataSource = this.myAlbumDataSet1.MyPicture;
             //this.dataGridView1.DataSource = this.bindingSource2;
 
             //放到建構子方法出問題?System.ArgumentException: '無法繫結至 DataSource 上的屬性或欄位 Description

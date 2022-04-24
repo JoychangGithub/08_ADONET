@@ -177,7 +177,7 @@ namespace MyHW
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -193,6 +193,7 @@ namespace MyHW
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.splitContainer1.Panel2.Controls.Add(this.myPictureBindingNavigator);
+            this.splitContainer1.Panel2.Controls.Add(this.myPictureDataGridView);
             this.splitContainer1.Panel2.Controls.Add(pictureLabel);
             this.splitContainer1.Panel2.Controls.Add(this.btnUpdate);
             this.splitContainer1.Panel2.Controls.Add(this.picturePictureBox);
@@ -201,7 +202,6 @@ namespace MyHW
             this.splitContainer1.Panel2.Controls.Add(pictureNameLabel);
             this.splitContainer1.Panel2.Controls.Add(this.pictureNameTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
-            this.splitContainer1.Panel2.Controls.Add(this.myPictureDataGridView);
             this.splitContainer1.Panel2.Controls.Add(this.linkLabel2);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.splitContainer1.Size = new System.Drawing.Size(1100, 604);
@@ -246,7 +246,7 @@ namespace MyHW
             this.myPictureBindingNavigator.Name = "myPictureBindingNavigator";
             this.myPictureBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.myPictureBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.myPictureBindingNavigator.Size = new System.Drawing.Size(412, 70);
+            this.myPictureBindingNavigator.Size = new System.Drawing.Size(410, 70);
             this.myPictureBindingNavigator.TabIndex = 35;
             this.myPictureBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -335,9 +335,9 @@ namespace MyHW
             this.btnUpdate.BackgroundImage = global::MyHW.Properties.Resources.background171;
             this.btnUpdate.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnUpdate.Location = new System.Drawing.Point(540, 42);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(249, 39);
+            this.btnUpdate.Size = new System.Drawing.Size(247, 39);
             this.btnUpdate.TabIndex = 16;
             this.btnUpdate.Text = "Update Picture";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -366,7 +366,7 @@ namespace MyHW
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.ReadOnly = true;
-            this.descriptionTextBox.Size = new System.Drawing.Size(351, 216);
+            this.descriptionTextBox.Size = new System.Drawing.Size(349, 216);
             this.descriptionTextBox.TabIndex = 38;
             // 
             // pictureNameTextBox
@@ -379,7 +379,7 @@ namespace MyHW
             this.pictureNameTextBox.Multiline = true;
             this.pictureNameTextBox.Name = "pictureNameTextBox";
             this.pictureNameTextBox.ReadOnly = true;
-            this.pictureNameTextBox.Size = new System.Drawing.Size(351, 48);
+            this.pictureNameTextBox.Size = new System.Drawing.Size(349, 48);
             this.pictureNameTextBox.TabIndex = 40;
             // 
             // statusStrip1
@@ -403,11 +403,11 @@ namespace MyHW
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.myPictureDataGridView.DataSource = this.myPictureBindingSource;
-            this.myPictureDataGridView.Location = new System.Drawing.Point(682, 442);
+            this.myPictureDataGridView.Location = new System.Drawing.Point(740, 452);
             this.myPictureDataGridView.Name = "myPictureDataGridView";
             this.myPictureDataGridView.RowHeadersWidth = 62;
             this.myPictureDataGridView.RowTemplate.Height = 31;
-            this.myPictureDataGridView.Size = new System.Drawing.Size(69, 72);
+            this.myPictureDataGridView.Size = new System.Drawing.Size(108, 90);
             this.myPictureDataGridView.TabIndex = 33;
             this.myPictureDataGridView.Visible = false;
             // 

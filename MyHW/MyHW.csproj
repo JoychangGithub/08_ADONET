@@ -144,6 +144,12 @@
     <Compile Include="FrmMyAlbum_V2.Designer.cs">
       <DependentUpon>FrmMyAlbum_V2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPicViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPicViewer.Designer.cs">
+      <DependentUpon>FrmPicViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTreeView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </Compile>
     <Compile Include="Frm_Pic.Designer.cs">
       <DependentUpon>Frm_Pic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyAlbumDataSet.cs">
+      <DependentUpon>MyAlbumDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="MyAlbumDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -213,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMyAlbum_V2.resx">
       <DependentUpon>FrmMyAlbum_V2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPicViewer.resx">
+      <DependentUpon>FrmPicViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTreeView.resx">
       <DependentUpon>FrmTreeView.cs</DependentUpon>
@@ -290,6 +302,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>MyAlbumDatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\trash-icon.png" />
+    <None Include="Resources\trash-icon-clipart.png" />
+    <None Include="Resources\delete1.jpg" />
+    <None Include="Resources\delete.jpg" />
     <None Include="Resources\桌布32.jpg" />
     <None Include="Resources\桌布181.jpg" />
     <None Include="Resources\桌布151.jpg" />
