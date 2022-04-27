@@ -31,6 +31,7 @@ namespace MyHW
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_FrmLogon = new System.Windows.Forms.Button();
             this.btn_FrmCustomers = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@ namespace MyHW
             this.btn_FrmProducts = new System.Windows.Forms.Button();
             this.btn_FrmCategoryProducts = new System.Windows.Forms.Button();
             this.btn_標準練習 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -65,8 +65,8 @@ namespace MyHW
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1022, 615);
-            this.splitContainer1.SplitterDistance = 112;
+            this.splitContainer1.Size = new System.Drawing.Size(1385, 768);
+            this.splitContainer1.SplitterDistance = 139;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -91,10 +91,23 @@ namespace MyHW
             this.splitContainer2.Panel1.Controls.Add(this.btn_FrmProducts);
             this.splitContainer2.Panel1.Controls.Add(this.btn_FrmCategoryProducts);
             this.splitContainer2.Panel1.Controls.Add(this.btn_標準練習);
-            this.splitContainer2.Size = new System.Drawing.Size(1022, 500);
-            this.splitContainer2.SplitterDistance = 274;
+            this.splitContainer2.Size = new System.Drawing.Size(1385, 626);
+            this.splitContainer2.SplitterDistance = 371;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(11, 266);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(191, 28);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "8. FrmMyAlbum_V2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -210,24 +223,11 @@ namespace MyHW
             this.btn_標準練習.UseVisualStyleBackColor = true;
             this.btn_標準練習.Click += new System.EventHandler(this.btn_標準練習_Click);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(11, 266);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(191, 28);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "8. FrmMyAlbum_V2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 615);
+            this.ClientSize = new System.Drawing.Size(1385, 768);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";

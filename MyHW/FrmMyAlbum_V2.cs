@@ -491,7 +491,7 @@ namespace MyHW
 
             if (result == DialogResult.OK)
             {
-                this.pictureBox3.Image = Image.FromFile(this.openFileDialog1.FileName);
+                this.picturePictureBox.Image = Image.FromFile(this.openFileDialog1.FileName);
             }
             else
             {

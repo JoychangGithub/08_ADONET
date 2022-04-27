@@ -86,15 +86,14 @@ namespace MyHomeWork
                     {
                         MessageBox.Show("登入成功");
                         this.DialogResult = DialogResult.OK;
+                        this.Close();
 
-                        FrmMain frmmain = new FrmMain();
-                        frmmain.Show();
                         
                     }
                     else 
                     {
                         MessageBox.Show("登入失敗");
-                        this.Close();
+                        
                     }
                 }
 
@@ -139,8 +138,7 @@ namespace MyHomeWork
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            UsernameTextBox.Text = "";
-            PasswordTextBox.Text = "";
+            this.Close();
         }
     }
 }
