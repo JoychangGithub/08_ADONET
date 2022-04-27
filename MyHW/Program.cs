@@ -21,7 +21,13 @@ namespace MyHW
             if (System.Environment.OSVersion.Version.Major >= 6) { SetProcessDPIAware(); }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMyAlbum_V2());
+            Application.Run(new FrmLogon());
+
+            FrmLogon f= new FrmLogon();
+            if (f.ShowDialog() == DialogResult.OK) 
+            {
+                f.Close();
+            }
         }
     }
 }

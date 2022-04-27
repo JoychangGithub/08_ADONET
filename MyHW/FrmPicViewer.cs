@@ -59,41 +59,39 @@ namespace MyHW
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            int position = bindingSource1.Position;
-            int length = this.dataGridView1.Rows.Count - 1;
-            MessageBox.Show(length.ToString());
-            //bool Flag = true;
+            timer1.Enabled = !timer1.Enabled;
+        }
 
-            for (int k=1; k > 0; k++)
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //int position = bindingSource1.Position;
+            //int length = this.dataGridView1.Rows.Count - 1;
+
+            if (timer1.Enabled)
             {
-
-                if (position < length)
+                if (bindingSource1.Position < bindingSource1.Count - 1)
                 {
-                    for (int i = position; i < length; i++)
-                    {
-                        bindingSource1.Position = i;
-                        Application.DoEvents();
-                        Thread.Sleep(700);
-                    }
-                    k++;
+                    //bindingSource1.Position = position + 1;
+                    bindingSource1.MoveNext();
                 }
-                if (bindingSource1.Position == length - 1)
+                else //if (bindingSource1.Position == bindingSource1.Count - 1)
                 {
-
-                    bindingSource1.Position = 0;
-                    position = 0;
-                    //Application.DoEvents();
-                    //Thread.Sleep(700);
-                    k++;
+                    bindingSource1.MoveFirst();
+                    //position = 0;
                 }
-                //if (this.Close() == true) 
-                //{
 
-                //}
-                
+                //if (bindingSource1.Position == bindingSource1.Count - 1) { bindingSource1.MoveFirst(); }
+                //else { bindingSource1.MoveNext(); }
             }
+        }
 
-                        
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            trackBar1.Minimum = 367;
+            trackBar1.Maximum = 600;
+
+            pictureBox1.Width = trackBar1.Value;
+            pictureBox1.Height = trackBar1.Value;
         }
     }
 }

@@ -19,29 +19,44 @@ namespace MyHW
         {
             InitializeComponent();            
             ShowCityLink();  //顯示城市linklabel
-            ShowCityphotos();  //顯示城市dataGridView
+            ShowCityphotos();
             this.flowLayoutPanel2.AllowDrop = true;  //允許拖曳照片至flowLayoutPanel2
             this.flowLayoutPanel2.DragEnter += FlowLayoutPanel_DragEnter;
             this.flowLayoutPanel2.DragDrop += FlowLayoutPanel_DragDrop;
             
         }
-
         private void ShowCityphotos()
-        {           
-            this.myPictureTableAdapter1.FillByShowCityName(this.myAlbumDataSet1.MyPicture);//join 2個table，使可以顯示城市名稱
-            this.bindingSource1.DataSource = this.myAlbumDataSet1.MyPicture;
-            this.dataGridView1.DataSource = this.bindingSource1;
+        {
+            //作法2:city與picture繫節
+            this.myPictureTableAdapter1.FillByphoto(this.myAlbumDataSet1.MyPicture, myCityBindingSource.Position+1);
+            this.myPictureDataGridView.DataSource = this.myAlbumDataSet1.MyPicture;
+            myCityBindingSource.CurrentChanged += myCityBindingSource_CurrentChanged;
+            this.myPictureDataGridView.DataSource = myPictureBindingSource;
+            this.bindingNavigator1.BindingSource = myPictureBindingSource;
+            //============================
+            //作法1: city與picture無法繫節
+            //this.myPictureTableAdapter1.FillByShowCityName(this.myAlbumDataSet1.MyPicture);
+            //this.bindingSource1.DataSource = this.myAlbumDataSet1.MyPicture;
+            //this.dataGridView1.DataSource = this.bindingSource1;
 
-            this.textBox1.DataBindings.Add("Text", this.bindingSource1, "PictureID");
-            this.textBox2.DataBindings.Add("Text", this.bindingSource1, "CityID");
-            this.textBox4.DataBindings.Add("Text", this.bindingSource1, "PictureName");
-            this.textBox5.DataBindings.Add("Text", this.bindingSource1, "Description");
-            this.pictureBox3.DataBindings.Add("Image", this.bindingSource1, "Picture", true);
-            this.comboBox2.DataBindings.Add("Text", this.bindingSource1, "CityName") ;
-            this.dateTimePicker1.DataBindings.Add("Value", this.bindingSource1, "Date");
+            //this.textBox1.DataBindings.Add("Text", this.bindingSource1, "PictureID");
+            //this.textBox2.DataBindings.Add("Text", this.bindingSource1, "CityID");
+            //this.textBox4.DataBindings.Add("Text", this.bindingSource1, "PictureName");
+            //this.textBox5.DataBindings.Add("Text", this.bindingSource1, "Description");
+            //this.pictureBox3.DataBindings.Add("Image", this.bindingSource1, "Picture", true);
+            //this.comboBox2.DataBindings.Add("Text", this.bindingSource1, "CityName");
+            //this.dateTimePicker1.DataBindings.Add("Value", this.bindingSource1, "Date");
 
-            this.bindingNavigator1.BindingSource = this.bindingSource1;
-            
+            //this.bindingNavigator1.BindingSource = this.bindingSource1;
+
+        }
+
+        private void myCityBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            this.myPictureTableAdapter1.FillByphoto(this.myAlbumDataSet1.MyPicture, myCityBindingSource.Position + 1);
+            this.myPictureDataGridView.DataSource = this.myAlbumDataSet1.MyPicture;
+            this.myPictureDataGridView.DataSource = myPictureBindingSource;
+            this.bindingNavigator1.BindingSource = myPictureBindingSource;
         }
 
         Dictionary<string, int> dicCity = new Dictionary<string, int>();
@@ -218,6 +233,7 @@ namespace MyHW
                 pic.MouseLeave += Pic_MouseLeave;  //離開圖片邊框恢復無色
 
                 this.flowLayoutPanel1.Controls.Add(pic);
+               
                 ID = ID + 1;
             }
         }
@@ -259,6 +275,9 @@ namespace MyHW
             f.bindingNavigator1.BindingSource = f.bindingSource1;                    
         }
 
+        Dictionary<int, int> dicPicID2 = new Dictionary<int, int>();  //ID, pictureID
+        Dictionary<int, int> dicPicIndex = new Dictionary<int, int>();  //ID, Picindex
+        int identity = 0;
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
@@ -273,7 +292,7 @@ namespace MyHW
                 using (conn = new SqlConnection(builder.ConnectionString))
                 {
                     SqlCommand command = new SqlCommand();
-                    command.CommandText = $"Select Picture from MyPicture  as p join MyCity as c on p.CityID = c.CityId where CityName='{comboBox1.Text}'";
+                    command.CommandText = $"Select * from MyPicture  as p join MyCity as c on p.CityID = c.CityId where CityName='{comboBox1.Text}'";
                     command.Connection = conn;
                     conn.Open();
 
@@ -294,11 +313,16 @@ namespace MyHW
                             pic.Height = 150;
                             pic.Padding = new Padding(8);
                             pic.BorderStyle = BorderStyle.Fixed3D;
+                            pic.Tag = identity;
+                            int pictureid = Convert.ToInt32(dataReader["PictureID"]);
 
+                            dicPicID2.Add(identity, pictureid);
                             pic.MouseEnter += Pic_MouseEnter;  //註冊方法  //點選圖片邊框為紅色
                             pic.MouseLeave += Pic_MouseLeave;  //離開圖片邊框恢復無色
                             pic.MouseDown += Pic_MouseDown;
-                            this.flowLayoutPanel2.Controls.Add(pic);                           
+                            this.flowLayoutPanel2.Controls.Add(pic);
+
+                            identity = identity + 1;
                         }
                     }
                     else
@@ -357,20 +381,6 @@ namespace MyHW
             this.comboBox1.SelectedIndex = 0;  //Lisbon為預設值
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            DialogResult result = this.openFileDialog1.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                this.pictureBox3.Image = Image.FromFile(this.openFileDialog1.FileName);
-            }
-            else 
-            {
-                MessageBox.Show("Cancel");
-            }
-        }
-
         private void myCityBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
@@ -378,34 +388,36 @@ namespace MyHW
             this.tableAdapterManager.UpdateAll(this.myAlbumDataSet1);
 
         }
-        private void DeletePicture(Image img)
+        private void DeletePicture(int id)
         {
             //delete Image from Table
-
+            int pictureid = Convert.ToInt32(dicPicID2[id]);
+            int index = dicPicIndex[id];
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = @"(LocalDB)\MSSQLLocalDB";
             builder.AttachDBFilename = Application.StartupPath + @"\MyAlbumDatabase.mdf";
             builder.IntegratedSecurity = true;
             //MessageBox.Show(builder.ConnectionString);
+            //MessageBox.Show(id.ToString());
             try
             {
-                SqlConnection conn = null;
-                using (conn = new SqlConnection(builder.ConnectionString))
+                using (SqlConnection conn = new SqlConnection(builder.ConnectionString))//連線與自動關閉連線 //需using System.Data.SqlClient
                 {
+                    //MessageBox.Show(pictureid.ToString());
+
                     SqlCommand command = new SqlCommand();
-                    command.CommandText = "select * FROM MyPicture where PictureID = '1'";
+                    command.CommandText = $"Delete MyPicture where PictureID = {pictureid}";
                     command.Connection = conn;
 
-                    conn.Open();
+                    conn.Open();  
 
-                    SqlDataReader dataReader = command.ExecuteReader();
-                    while (dataReader.Read()) 
-                    {
-                        string Picture = dataReader["Picture"].ToString();
-                        listBox1.Items.Add(Picture);
-                    }
+                    command.ExecuteNonQuery(); 
+                    MessageBox.Show("Delete Successfully");
+                    //flowLayoutPanel2.Controls.RemoveAt(index);
+
                 }
-            }
+            }//Auto conn.Close();
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -432,14 +444,19 @@ namespace MyHW
                     pic.BackColor = Color.Yellow;
                     MessageBox.Show("刪除");
                     Image img = pic.Image;
+                    int id = Convert.ToInt32(pic.Tag);
 
-                    if (img != null)
-                    {                      
-                        MessageBox.Show("目前有圖片");
-                        //img.Dispose();                        
-                    }
+                    int picIndex = this.flowLayoutPanel2.Controls.IndexOf(pic);
+                    //MessageBox.Show("picIndex: " + picIndex);
+                    dicPicIndex.Add(id, picIndex);
 
-                    //DeletePicture(img);
+                    //if (img != null)
+                    //{                      
+                    //    MessageBox.Show("目前有圖片");
+                    //    //img.Dispose();                        
+                    //}
+
+                    DeletePicture(id);
                 }
                 else 
                 {
@@ -466,6 +483,20 @@ namespace MyHW
             // TODO: 這行程式碼會將資料載入 'myAlbumDataSet.MyCity' 資料表。您可以視需要進行移動或移除。
             this.myCityTableAdapter1.Fill(this.myAlbumDataSet1.MyCity);
 
+        }
+
+        private void btn_browser_Click(object sender, EventArgs e)
+        {
+            DialogResult result = this.openFileDialog1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.pictureBox3.Image = Image.FromFile(this.openFileDialog1.FileName);
+            }
+            else
+            {
+                MessageBox.Show("Cancel");
+            }
         }
     }
 }

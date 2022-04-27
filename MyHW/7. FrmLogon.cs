@@ -51,9 +51,7 @@ namespace MyHomeWork
 
                         MessageBox.Show("註冊成功");
 
-                        //開啟FrmMain視窗
-                        FrmMain Mainform = new FrmMain();
-                        Mainform.Show();
+
                     }
                 }
                 catch (Exception ex)
@@ -62,24 +60,6 @@ namespace MyHomeWork
                 }
             }
 
-            ////變數寫法
-            //try
-            //{
-            //    using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
-            //    {
-            //        string userName = UsernameTextBox.Text;
-            //        string userPassword = PasswordTextBox.Text;
-            //        SqlCommand command = new SqlCommand($"Insert into MyMember (UserName, Password) values('{userName}','{userPassword}')", conn);
-            //        conn.Open();
-            //        command.ExecuteNonQuery();  //Insert
-
-            //        MessageBox.Show("Insert Successfully");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
         }
 
         private void OK_Click(object sender, EventArgs e)
@@ -105,10 +85,16 @@ namespace MyHomeWork
                     if (dataReader.HasRows)
                     {
                         MessageBox.Show("登入成功");
+                        this.DialogResult = DialogResult.OK;
+
+                        FrmMain frmmain = new FrmMain();
+                        frmmain.Show();
+                        
                     }
                     else 
                     {
                         MessageBox.Show("登入失敗");
+                        this.Close();
                     }
                 }
 
