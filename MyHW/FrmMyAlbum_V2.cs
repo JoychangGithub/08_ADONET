@@ -164,7 +164,7 @@ namespace MyHW
 
                 //==================================
                 comboBox1.Items.Add(city);
-                comboBox2.Items.Add(city);
+                //comboBox2.Items.Add(city);
                 dicCity.Add(city, i+1);   //CityId=x.Tag +１  //將城市名稱與CityId加入dicPic字典
             }
         }
