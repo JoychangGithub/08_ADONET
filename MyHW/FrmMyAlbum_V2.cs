@@ -165,7 +165,7 @@ namespace MyHW
                 //==================================
                 comboBox1.Items.Add(city);
                 //comboBox2.Items.Add(city);
-                dicCity.Add(city, i+1);   //CityId=x.Tag +１  //將城市名稱與CityId加入dicPic字典
+                dicCity.Add(city, i+1);   //CityId=x.Tag +１  //將城市名稱與CityId加入dicCity字典
             }
         }
 
@@ -413,7 +413,7 @@ namespace MyHW
 
                     command.ExecuteNonQuery(); 
                     MessageBox.Show("Delete Successfully");
-                    //flowLayoutPanel2.Controls.RemoveAt(index);
+                    flowLayoutPanel2.Controls.RemoveAt(index);
 
                 }
             }//Auto conn.Close();
